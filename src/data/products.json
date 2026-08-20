@@ -1,0 +1,105 @@
+{
+  "section": {
+    "title": "BEST DISPENSARY TO BUY WEED ONLINE IN CANADA"
+  },
+
+  "tabs": [
+    {
+      "id": "best-sellers",
+      "title": "Best Sellers"
+    },
+    {
+      "id": "bundles",
+      "title": "Bundles & Promotions"
+    },
+    {
+      "id": "sale",
+      "title": "On Sale"
+    }
+  ],
+
+  "featured": {
+    "title": "Shop our Best Sellers",
+    "description": "Lorem ipsum dolor sit amet consectetur. Ullamcorper ipsum varius lorem blandit lectus magnis feugiat.",
+    "image": "product1.png",
+    "link": "/shop"
+  },
+
+  "products": [
+    {
+      "id": 1,
+      "category": "FLOWER",
+      "title": "2 Oz Deal Watermelon Zkittles + Purple Gushers",
+      "image": "product2.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Sativa 100%",
+      "price": "$80.00",
+      "priceUnit": "/ gram",
+      "oldPrice": "",
+      "badge": "",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
+    },
+    {
+      "id": 2,
+      "category": "CONCENTRATES",
+      "title": "Mix And Match Shatter/Budder 28g(4 X 7G)",
+      "image": "product3.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Indica 70%",
+      "price": "$102.00",
+      "priceUnit": "",
+      "oldPrice": "$200.00",
+      "badge": "",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
+    },
+    {
+      "id": 3,
+      "category": "FLOWER",
+      "title": "2 Oz Deal Ahi Tuna + Master Tuna",
+      "image": "product4.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Sativa 100%",
+      "price": "$120.00",
+      "priceUnit": "",
+      "oldPrice": "$200.00",
+      "badge": "$60 ounce",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
+    },
+    {
+      "id": 2,
+      "category": "CONCENTRATES",
+      "title": "Mix And Match Shatter/Budder 28g(4 X 7G)",
+      "image": "product3.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Indica 70%",
+      "price": "$102.00",
+      "priceUnit": "",
+      "oldPrice": "$200.00",
+      "badge": "",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
+    },
+    {
+      "id": 2,
+      "category": "CONCENTRATES",
+      "title": "Mix And Match Shatter/Budder 28g(4 X 7G)",
+      "image": "product3.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Indica 70%",
+      "price": "$102.00",
+      "priceUnit": "",
+      "oldPrice": "$200.00",
+      "badge": "",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
+    }
+  ]
+}

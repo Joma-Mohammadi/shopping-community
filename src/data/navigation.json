@@ -1,0 +1,139 @@
+[
+  {
+    "id": 1,
+    "title": "Shop All",
+    "path": "/shop",
+    "dropdown": false
+  },
+  {
+    "id": 2,
+    "title": "Flower",
+    "path": "/category/flower",
+    "dropdown": true,
+    "items": [
+      {
+        "id": 21,
+        "title": "Indica",
+        "path": "/category/flower/indica"
+      },
+      {
+        "id": 22,
+        "title": "Sativa",
+        "path": "/category/flower/sativa"
+      },
+      {
+        "id": 23,
+        "title": "Hybrid",
+        "path": "/category/flower/hybrid"
+      },
+      {
+        "id": 24,
+        "title": "Pre-Rolls",
+        "path": "/category/flower/pre-rolls"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Edibles",
+    "path": "/category/edibles",
+    "dropdown": false
+  },
+  {
+    "id": 4,
+    "title": "Concentrates",
+    "path": "/category/concentrates",
+    "dropdown": true,
+    "items": [
+      {
+        "id": 41,
+        "title": "Live Resin",
+        "path": "/category/concentrates/live-resin"
+      },
+      {
+        "id": 42,
+        "title": "Live Rosin",
+        "path": "/category/concentrates/live-rosin"
+      },
+      {
+        "id": 43,
+        "title": "Shatter",
+        "path": "/category/concentrates/shatter"
+      },
+      {
+        "id": 44,
+        "title": "Hash",
+        "path": "/category/concentrates/hash"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Mushrooms",
+    "path": "/category/mushrooms",
+    "dropdown": false
+  },
+  {
+    "id": 6,
+    "title": "Promotions/Bundles",
+    "path": "/promotions",
+    "dropdown": true,
+    "items": [
+      {
+        "id": 61,
+        "title": "Daily Deals",
+        "path": "/promotions/daily-deals"
+      },
+      {
+        "id": 62,
+        "title": "Bundles",
+        "path": "/promotions/bundles"
+      },
+      {
+        "id": 63,
+        "title": "Clearance",
+        "path": "/promotions/clearance"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Support",
+    "path": "/support",
+    "dropdown": true,
+    "items": [
+      {
+        "id": 71,
+        "title": "Contact Us",
+        "path": "/support/contact"
+      },
+      {
+        "id": 72,
+        "title": "FAQ",
+        "path": "/support/faq"
+      },
+      {
+        "id": 73,
+        "title": "Shipping",
+        "path": "/support/shipping"
+      },
+      {
+        "id": 74,
+        "title": "Returns",
+        "path": "/support/returns"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Rewards",
+    "path": "/rewards",
+    "dropdown": false
+  },
+  {
+    "id": 9,
+    "title": "Blog",
+    "path": "/blog",
+    "dropdown": false
+  }
+]

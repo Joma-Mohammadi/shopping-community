@@ -1,0 +1,35 @@
+{
+  "eyebrow": "BEST SELLER",
+  "title": "BEST DISPENSARY TO BUY WEED ONLINE",
+  "subtitle": "Vitamins & Supplements",
+  "offers": [
+    {
+      "id": 1,
+      "text": "Get 25% off"
+    },
+    {
+      "id": 2,
+      "text": "Free Shipping"
+    }
+  ],
+  "button": {
+    "text": "Shop All",
+    "path": "/shop"
+  },
+  "products": [
+    {
+      "id": 1,
+      
+      "position": "center"
+     
+    },
+   {
+  "id": 2,
+  "position": "left"
+  
+},
+{
+  "id": 3
+}
+]
+}
