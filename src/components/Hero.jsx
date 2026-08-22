@@ -1,6 +1,5 @@
-import Button from '../components/Button'
+import Button from "../components/Button";
 import hero from "../data/hero.json";
-
 import image1 from "../images/1.png";
 import image2 from "../images/2.png";
 import image3 from "../images/3.png";
@@ -8,87 +7,71 @@ import background from "../images/Mask group.png";
 import mobileBackground from "../images/Mask group (1).png";
 
 export default function Hero() {
-    const productImages = {
-        2: image1,
-        1: image2,
-        3: image3,
-    };
+    const productImages = { 2: image1, 1: image2, 3: image3 };
 
     return (
         <section
-            className=" relative min-h-138.75overflow-hidden bg-[#145b47] bg-cover bg-center sm:min-h-180 md:min-h-200 lg:min-h-250"
-            style={{ backgroundImage: `url(${background})` }} >
-            <img
-                src={mobileBackground}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover md:hidden"
-            />
+            className="relative min-h-170 overflow-hidden bg-[#145b47] bg-cover bg-center sm:min-h-180 md:min-h-190 
+            lg:min-h-200 xl:min-h-212.5"
+            style={{ backgroundImage: `url(${background})` }}
+        >
+            <img src={mobileBackground} alt="" className="absolute inset-0 h-full w-full object-cover md:hidden" />
 
-            <div
-                className="mx-auto grid min-h-138.75 w-full grid-cols-1
-                    sm:min-h-180 md:min-h-200 md:w-450 md:grid-cols-2 lg:min-h-250 ">
+            <div className="mx-auto grid min-h-170 w-full max-w-400 grid-cols-1 sm:min-h-180 md:min-h-190 md:grid-cols-2
+             lg:min-h-200 xl:min-h-212.5">
                 {/* Content */}
-                <div
-                    className="relative z-20 flex flex-col justify-center px-8 py-6 sm:px-8 md:px-10 lg:px-12">
-                    <span
-                        className=" mb-3 text-xs font-bold tracking-[3px] text-yellow-400 sm:mb-4 sm:text-sm sm:tracking-[4px] md:mb-5 md:tracking-[5px] ">
+                <div className="relative z-20 flex flex-col justify-center px-6 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-12 xl:px-16">
+                    <span className="mb-3 text-xs font-bold tracking-[3px] text-yellow-400 sm:mb-4 sm:text-sm sm:tracking-[4px] md:mb-5 md:tracking-[5px]">
                         {hero.eyebrow}
                     </span>
 
-                    <h1
-                        className=" max-w-162.5  text-3xl font-bold leading-[1.12] text-white  sm:text-4xl md:text-5xllg:text-6xl">
-                        {hero.title}
+                    <h1 className="text-3xl font-bold leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-6xl">
+                        {hero.title[0]} <br />
+                        {hero.title[1]}
                     </h1>
 
-                    <p className="mt-4 text-lg text-white sm:mt-5 sm:text-xl md:text-2xl">
+                    <p className="mt-4 max-w-150 text-base leading-relaxed text-white sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">
                         {hero.subtitle}
                     </p>
 
                     {/* Offers */}
-                    <div className=" mt-8 flex items-center  gap-4 text-base font-bold text-white sm:mt-12
-                         sm:gap-5 sm:text-lg md:mt-20 md:gap-6 md:text-xl" >
+                    <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm font-bold text-white sm:mt-10 sm:gap-x-5 sm:text-base md:mt-14 md:gap-x-6 md:text-lg lg:mt-20 lg:text-xl">
                         {hero.offers.map((offer, index) => (
-                            <div
-                                key={offer.id}
-                                className="flex items-center gap-4 sm:gap-5 md:gap-6" >
+                            <div key={offer.id} className="flex items-center gap-4 sm:gap-5 md:gap-6">
                                 <span>{offer.text}</span>
-
-                                {index !== hero.offers.length - 1 && (
-                                    <span className="h-5 w-px bg-white/40" />
-                                )}
+                                {index !== hero.offers.length - 1 && <span className="h-5 w-px bg-white/40" />}
                             </div>
                         ))}
                     </div>
 
                     {/* Button */}
-                    <Button
-                        to={hero.button.path}>
-                        {hero.button.text}</Button>
+                    <div className="mt-8 sm:mt-10 md:mt-12">
+                        <Button to={hero.button.path}>{hero.button.text}</Button>
+                    </div>
                 </div>
 
                 {/* Products */}
-                <div
-                    className="relative min-h-85 sm:min-h-100 md:min-h-150 lg:min-h-200">
+                <div className="relative min-h-75 sm:min-h-90 md:min-h-0">
                     {hero.products.map((product) => (
                         <div
                             key={product.id}
                             className={`absolute ${product.position === "center"
-                                ? "right-[29%] top-[6%] sm:right-[30%] sm:top-[15%] md:right-[35%] md:top-[37%]"
-                                : product.position === "left"
-                                    ? "left-[-4%] bottom-[13%] sm:left-[10%] sm:bottom-[18%] md:left-[12%] md:bottom-[18%]"
-                                    : "right-[3%] bottom-[23%] sm:right-[5%] sm:bottom-[22%] md:right-[5%] md:bottom-[25%]"
+                                    ? "left-[48%] top-[-17%] -translate-x-1/2 sm:top-[7%] md:left-[50%] md:top-[30%] lg:top-[27%] xl:top-[20%] xl:left-[61%]"
+                                    : product.position === "left"
+                                        ? "left-[0%] bottom-[4%] sm:left-[5%] sm:bottom-[8%] md:left-[2%] md:bottom-[12%] lg:left-[5%] lg:bottom-[13%] xl:left-[10%]"
+                                        : "right-[4%] bottom-[36%] sm:right-[3%] sm:bottom-[10%] md:right-[0%] md:bottom-[15%] lg:right-[3%] lg:bottom-[20%] xl:right-[-11%]"
                                 }`}
                         >
-                            <div className="flex h-37.5 w-47.5 items-end justify-center">
+                            <div className="flex h-40 w-36 items-end justify-center sm:h-48 sm:w-44 md:h-52 md:w-48 lg:h-60 lg:w-56 xl:h-72 xl:w-64">
                                 <img
                                     src={productImages[product.id]}
                                     alt={product.name}
                                     className={
                                         product.id === 1
-                                            ? "h-auto w-35 object-contain sm:w-75 md:w-40 lg:w-90"
+                                            ? "h-auto w-32 object-contain sm:w-36 md:w-40 lg:w-48 xl:w-56"
                                             : product.id === 2
-                                                ? "h-auto w-24 object-contain sm:w-30 md:w-35 lg:w-40"
-                                                : "h-auto w-23 object-contain sm:w-28 md:w-32 lg:w-37.5"
+                                                ? "h-auto w-24 object-contain sm:w-28 md:w-32 lg:w-36 xl:w-40"
+                                                : "h-auto w-20 object-contain sm:w-24 md:w-28 lg:w-32 xl:w-36"
                                     }
                                 />
                             </div>

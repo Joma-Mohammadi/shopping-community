@@ -1,0 +1,49 @@
+{
+  "section": {
+    "titleBefore": "WHAT MAKES US THE",
+    "highlight": "#1",
+    "titleLines": [
+      "ONLINE MARIJUANA ",
+      "DISPENSARY IN CANADA?"
+    ],
+    "description": "When it comes to what makes us stand out, we could wax lyrical about our positive qualities. Instead, to make this information clearer, we have highlighted the six prioritized features that make us a cut above the rest."
+  },
+  "features": [
+    {
+      "id": 1,
+      "icon": "support",
+      "title": "CUSTOMER SERVICE",
+      "description": "Whether it is answering any questions you have before making a purchase, helping out with the buying process itself or taking your feedback under consideration, we are proud to provide high quality customer service."
+    },
+    {
+      "id": 2,
+      "icon": "security",
+      "title": "SECURITY",
+      "description": "We only keep the details that are necessary for you to have an account with us. Your information is handled carefully and securely throughout the entire process."
+    },
+    {
+      "id": 3,
+      "icon": "value",
+      "title": "BEST VALUE",
+      "description": "We continually adjust what we supply and our prices to ensure that we maintain an optimal balance of affordable and quality products."
+    },
+    {
+      "id": 4,
+      "icon": "delivery",
+      "title": "DELIVERY INSURANCE",
+      "description": "If your order becomes lost, stolen, or damaged during transit, we will work to provide a suitable replacement according to our delivery policy."
+    },
+    {
+      "id": 5,
+      "icon": "quality",
+      "title": "HIGHEST QUALITY",
+      "description": "All of our products are carefully reviewed to ensure that they meet our quality standards. We work with trusted suppliers and continually review what makes a quality product."
+    },
+    {
+      "id": 6,
+      "icon": "trust",
+      "title": "TRUST",
+      "description": "With years of experience, you can rest assured that you will be taken care of. We always keep our customers' best interests in mind."
+    }
+  ]
+}

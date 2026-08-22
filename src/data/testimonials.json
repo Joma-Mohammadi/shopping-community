@@ -2,6 +2,7 @@
   "section": {
     "title": "CUSTOMER TESTIMONIALS"
   },
+
   "featured": {
     "title": "VOTED BEST ONLINE DISPENSARY IN CANADA",
     "platform": "Google",
@@ -9,39 +10,39 @@
     "rating": 5,
     "reviews": 135
   },
+
   "testimonials": [
     {
       "id": 1,
       "name": "Vikki Starr",
       "avatar": "avatar1.png",
-      "avatarBg": "#7DBE6B",
       "rating": 4,
       "text": "Absolutely love TopShelfBC; affordable on any budget and such fast delivery, straight to my door! I recommend them to all my friends and family for their 420 needs.",
       "date": "January 15, 2023"
     },
+
     {
       "id": 2,
       "name": "Terry Baskey",
       "avatar": "avatar2.png",
-      "avatarBg": "#756C38",
       "rating": 5,
       "text": "Best damn place to buy your cannabis at great prices",
       "date": "January 5, 2023"
     },
+
     {
       "id": 3,
       "name": "John Smith",
       "avatar": "avatar3.png",
-      "avatarBg": "#8B7650",
       "rating": 5,
       "text": "Amazing service, great prices and very fast delivery. Highly recommended.",
       "date": "January 2, 2023"
     },
+
     {
       "id": 4,
       "name": "Michael Brown",
       "avatar": "avatar1.png",
-      "avatarBg": "#7DBE6B",
       "rating": 4,
       "text": "Great products and excellent customer service. Everything arrived exactly as expected.",
       "date": "December 28, 2022"

@@ -10,8 +10,7 @@ const avatars = {
 
 export default function TestimonialCard({ testimonial }) {
   return (
-    <section className="relative h-130 w-[calc(100vw-56px)] max-w-80 shrink-0 snap-start rounded-2xl border border-gray-200 bg-white px-7 py-8 sm:w-90 lg:w-95">
-
+    <section className="relative h-130 w-95 shrink-0 snap-start rounded-2xl border border-gray-200 bg-white px-7 py-8">
       <div className="flex items-center gap-4">
         <img
           src={avatars[testimonial.avatar]}
@@ -31,7 +30,9 @@ export default function TestimonialCard({ testimonial }) {
           <span
             key={index}
             className={`text-2xl leading-none ${
-              index < testimonial.rating ? "text-[#f9bd16]" : "text-gray-200"
+              index < testimonial.rating
+                ? "text-[#f9bd16]"
+                : "text-gray-200"
             }`}
           >
             ★
@@ -46,7 +47,6 @@ export default function TestimonialCard({ testimonial }) {
       <p className="absolute bottom-8 left-8 text-base text-gray-400">
         {testimonial.date}
       </p>
-
     </section>
   );
 }

@@ -1,6 +1,9 @@
 {
   "eyebrow": "BEST SELLER",
-  "title": "BEST DISPENSARY TO BUY WEED ONLINE",
+  "title": [
+    "BEST DISPENSARY TO",
+    "BUY WEED ONLINE"
+  ],
   "subtitle": "Vitamins & Supplements",
   "offers": [
     {
@@ -19,17 +22,15 @@
   "products": [
     {
       "id": 1,
-      
       "position": "center"
-     
     },
-   {
-  "id": 2,
-  "position": "left"
-  
-},
-{
-  "id": 3
-}
-]
+    {
+      "id": 2,
+      "position": "left"
+    },
+    {
+      "id": 3,
+      "position": "right"
+    }
+  ]
 }

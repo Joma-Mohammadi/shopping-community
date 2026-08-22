@@ -6,60 +6,42 @@ const featuredImages = {
 
 export default function FeaturedProduct({ product }) {
   return (
-    <article className="relative flex h-full min-h-130 flex-col items-center justify-end overflow-hidden rounded-2xl bg-[#075039] px-6 py-10 text-center">
-
+    <article className="relative flex h-152 w-full flex-col items-center justify-end 
+    overflow-hidden rounded-2xl bg-[#075039] px-5 py-8 text-center sm:px-7 sm:py-10">
       {/* Background */}
-
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute -right-20 -top-20 h-72 w-72 rotate-12 bg-[#38745f]" />
-
-        <div className="absolute -left-20 bottom-0 h-72 w-72 -rotate-12 bg-[#38745f]" />
+        <div className="absolute -right-16 -top-16 h-[clamp(180px,20vw,288px)] 
+        w-[clamp(180px,20vw,288px)] rotate-12 bg-[#38745f]" />
+        <div className="absolute -bottom-16 -left-16 h-[clamp(180px,20vw,288px)] 
+        w-[clamp(180px,20vw,288px)] -rotate-12 bg-[#38745f]" />
       </div>
 
-
       {/* Featured Image */}
-
-      <img
-        src={featuredImages[product.image]}
-        alt={product.title}
-        className="
-          relative
-          z-10
-          h-65
-          w-full
-          object-contain
-        "
-      />
-
+      <div className="relative z-10 flex w-full flex-1 items-center justify-center">
+        <img
+          src={featuredImages[product.image]}
+          alt={product.title}
+          className="h-auto max-h-[clamp(220px,28vw,360px)] w-full max-w-[clamp(220px,75%,360px)] object-contain"
+        />
+      </div>
 
       {/* Content */}
-
-      <div className="relative z-10">
-
-        <h3 className="text-2xl font-semibold text-white">
+      <div className="relative z-10 w-full">
+        <h3 className="text-xl font-semibold text-white sm:text-2xl">
           {product.title}
         </h3>
 
-        <p className="mx-auto mt-4 max-w-75 text-sm leading-6 text-white/70">
+        <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-white/70">
           {product.description}
         </p>
 
         <a
           href={product.link}
-          className="
-            mt-6
-            inline-block
-            text-sm
-            font-medium
-            text-green-400
-            underline
-          "
+          className="mt-5 inline-block text-sm font-medium text-green-400 underline"
         >
           View All
         </a>
-
       </div>
-
     </article>
   );
 }

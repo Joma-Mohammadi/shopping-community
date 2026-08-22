@@ -14,13 +14,13 @@ export default function FeatureCard({
   description,
 }) {
   return (
-    <article className="flex w-full items-start gap-4 sm:gap-5 lg:gap-7">
+    <section className="flex w-full items-start gap-4 sm:gap-5 lg:gap-7">
 
       {/* Icon */}
 
       <div
         className="
-          flex shrink-0 items-center justify-center
+          flex  items-center justify-center
           rounded-full bg-white
           h-18 w-18
           sm:h-22.5 sm:w-22.5
@@ -66,6 +66,6 @@ export default function FeatureCard({
 
       </div>
 
-    </article>
+    </section>
   );
 }
