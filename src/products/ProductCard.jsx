@@ -1,3 +1,6 @@
+import Button from '../components/Button'
+import  { useCart } from "../context/CartContext";
+
 import product2 from "../images/product2.png";
 import product3 from "../images/product3.png";
 import product4 from "../images/product4.png";
@@ -5,6 +8,7 @@ import product5 from "../images/product5.png";
 import product6 from "../images/product6.png";
 import product7 from "../images/product7.png";
 import product8 from "../images/product8.png";
+
 
 const productImages = {
   "product2.png": product2,
@@ -17,13 +21,15 @@ const productImages = {
 };
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
   return (
     <section className="group min-w-0 w-full">
       {/* Product Image */}
-      <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-[#f5f5f5]">
+      <div className="relative  w-full overflow-hidden rounded-xl bg-[#f5f5f5]">
         {/* Badge */}
         {product.badge && (
-          <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
+          <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 
+          text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
             {product.badge}
           </span>
         )}
@@ -114,13 +120,13 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Add Cart */}
-        <button
+        <Button
           type="button"
-          disabled={!product.stock}
-          className="mt-4 rounded-full bg-green-600 px-5 py-2.5 text-xs font-medium text-white transition hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50 sm:mt-5 sm:px-7 sm:py-3 sm:text-sm"
+          onClick={() => addToCart(product)}
+          className="mx-auto h-11 w-30"
         >
           Add to Cart
-        </button>
+        </Button>
       </div>
     </section>
   );

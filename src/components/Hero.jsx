@@ -45,8 +45,8 @@ export default function Hero() {
                     </div>
 
                     {/* Button */}
-                    <div className="mt-8 sm:mt-10 md:mt-12">
-                        <Button to={hero.button.path}>{hero.button.text}</Button>
+                    <div className="mt-8 sm:mt-10 md:mt-12 ">
+                        <Button className="  " to={hero.button.path}>{hero.button.text}</Button>
                     </div>
                 </div>
 

@@ -1,4 +1,5 @@
 import product1 from "../images/product1.png";
+import { Link } from "react-router-dom";
 
 const featuredImages = {
   "product1.png": product1,
@@ -35,12 +36,12 @@ export default function FeaturedProduct({ product }) {
           {product.description}
         </p>
 
-        <a
+        <Link
           href={product.link}
           className="mt-5 inline-block text-sm font-medium text-green-400 underline"
         >
           View All
-        </a>
+        </Link>
       </div>
     </article>
   );

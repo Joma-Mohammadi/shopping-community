@@ -30,9 +30,9 @@ export default function ChooseWeed() {
 
   return (
     <section className="w-full bg-white  py-10  sm:py-12  lg:py-14">
-      <div className="mx-auto  pb-28 lg:pb-25">
+      <div className="mx-auto  pb-30 lg:pb-36">
         {/* Title */}
-        <h2 className="text-[28px]  font-extrabold tracking-[-0.03em] text-[#20242d] sm:text-[34px] lg:text-[38px]">
+        <h2 className="text-[28px]  font-extrabold tracking-[-0.03em] text-[#20242d] sm:text-[34px] lg:text-5xl">
           CHOOSE YOUR WEED
         </h2>
 

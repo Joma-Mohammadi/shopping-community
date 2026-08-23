@@ -1,8 +1,7 @@
 import { useState } from "react";
-
+import { useCart } from "../context/CartContext";
 import {
   FaSearch,
-  
   FaBars,
   FaTimes
 } from "react-icons/fa";
@@ -16,6 +15,7 @@ import DropdownMenu from "./DropdownMenu";
 export default function Header() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartCount } = useCart();
 
   return (
     <header className="bg-white">
@@ -32,7 +32,7 @@ export default function Header() {
           to="/"
           className="flex w-62.5 shrink-0 items-center"
         >
-          <img src="../src/images/logo.png" alt="" className="w-45"/>
+          <img src="../src/images/logo.png" alt="" className="w-45" />
         </NavLink>
 
 
@@ -75,7 +75,7 @@ export default function Header() {
             <HiOutlineShoppingBag size={24} />
 
             <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[9px] text-white">
-              0
+              {cartCount}
             </span>
           </NavLink>
 
@@ -131,7 +131,7 @@ export default function Header() {
               />
 
               <span className="absolute -right-2 -top-2 flex h-4.25 w-4.25 items-center justify-center rounded-full bg-red-500 text-[9px] text-white">
-                0
+                {cartCount}
               </span>
             </NavLink>
 
@@ -177,10 +177,9 @@ export default function Header() {
                     to={item.path}
                     onClick={() => setMenuOpen(false)}
                     className={({ isActive }) =>
-                      `border-b border-gray-100 py-3 text-base transition ${
-                        isActive
-                          ? "font-medium text-green-700"
-                          : "text-gray-700"
+                      `border-b border-gray-100 py-3 text-base transition ${isActive
+                        ? "font-medium text-green-700"
+                        : "text-gray-700"
                       }`
                     }
                   >
@@ -256,10 +255,9 @@ export default function Header() {
                 key={item.id}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-base transition ${
-                    isActive
-                      ? "font-medium text-green-700"
-                      : "text-gray-700 hover:text-green-700"
+                  `text-base transition ${isActive
+                    ? "font-medium text-green-700"
+                    : "text-gray-700 hover:text-green-700"
                   }`
                 }
               >

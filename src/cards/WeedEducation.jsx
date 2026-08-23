@@ -8,9 +8,9 @@ export default function WeedEducation() {
   const visibleArticles = showAll ? data.articles : data.articles.slice(0, 3);
 
   return (
-    <section className="mx-auto w-full  px-5  sm:px-8 lg:px-10 pb-45 ">
+    <section className="mx-auto w-full  px-5  sm:px-8 lg:px-10 pb-60 ">
       <div className="flex items-center justify-between border-b border-gray-200 ">
-        <h2 className="text-3xl font-bold tracking-tight text-[#20242d] sm:text-4xl lg:text-5xl mb-8">
+        <h2 className="text-3xl font-bold tracking-tight text-[#20242d] sm:text-4xl lg:text-5xl mb-10">
           {data.title}
         </h2>
 

@@ -1,0 +1,48 @@
+{
+  "steps": [
+    "Shopping Cart",
+    "Checkout",
+    "Order Complete"
+  ],
+  "shipping": {
+    "freeShippingLimit": 100,
+    "shippingCost": 50
+  },
+  "coupon": {
+    "placeholder": "Coupon code",
+    "button": "Apply Coupon"
+  },
+  "buttons": {
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout"
+  },
+  "delivery": [
+    {
+      "title": "Delivery",
+      "heading": "Order by 10pm for free next day delivery on Orders over $100",
+      "description": "We deliver Monday to Saturday - excluding Holidays",
+      "icon": "truck"
+    },
+    {
+      "title": "",
+      "heading": "Free next day delivery to stores.",
+      "description": "Home delivery is $4.99 for orders under $100 and is FREE for all orders over $100",
+      "icon": "box"
+    },
+    {
+      "title": "Free Returns",
+      "heading": "",
+      "description": "30 days to return it to us for a refund. We have made returns SO EASY - you can now return your order to a store or send it with FedEx FOR FREE",
+      "icon": "return"
+    }
+  ],
+  "payment": {
+    "title": "Secure payments provided by",
+    "methods": [
+      "mastercard",
+      "visa",
+      "bitcoin",
+      "interac"
+    ]
+  }
+}

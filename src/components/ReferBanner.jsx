@@ -19,7 +19,7 @@ export default function ReferBanner({ refer }) {
           </p>
         </div>
 
-        <Button className="">Refer Here</Button>
+        <Button className="-ml-5 w-40">Refer Here</Button>
       </div>
     </section>
   );

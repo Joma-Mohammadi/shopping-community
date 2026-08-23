@@ -27,7 +27,7 @@ export default function Testimonials() {
 
   return (
     <section className="w-full bg-white py-14 sm:py-16 lg:py-20">
-      <h2 className="max-w-5xl text-4xl font-semibold leading-[1.15] tracking-[-1.5px] text-[#20242d] sm:text-5xl lg:text-6xl">
+      <h2 className="max-w-5xl text-4xl font-semibold leading-[1.15] tracking-[-1.5px] text-[#20242d] sm:text-5xl lg:text-5xl">
         {testimonialsData.section.title}
       </h2>
 
