@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
   return (
     <section className="group min-w-0 w-full">
       {/* Product Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#f5f5f5]">
+      <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-[#f5f5f5]">
         {/* Badge */}
         {product.badge && (
           <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
@@ -38,7 +38,9 @@ export default function ProductCard({ product }) {
         {/* Out Of Stock */}
         {product.image === "product3.png" && (
           <div className="absolute inset-0 z-30 flex items-center justify-center">
-            <span className="flex items-center justify-center rounded-full bg-white/50 px-5 py-3 text-xs font-semibold text-white shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-2xl backdrop-saturate-170 sm:px-7 sm:py-4 sm:text-sm">
+            <span className="flex items-center justify-center rounded-full bg-[#05422C4D]/30 px-5 py-3 text-xs
+             font-semibold text-white shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-lg backdrop-saturate-170 
+             sm:px-7 sm:py-4 sm:text-sm">
               Out Of Stock
             </span>
           </div>

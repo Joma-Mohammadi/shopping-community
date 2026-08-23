@@ -1,0 +1,30 @@
+{
+  "title": "CHOOSE YOUR WEED",
+  "items": [
+    {
+      "id": 1,
+      "title": "Indica",
+      "image": "Logo (1).png",
+      "icons":"MdLightMode",
+      "description": "This type of cannabis is commonly taken by those who want to sink into a state of total relaxation in every limb. This reduces stress overall and can take your worries and fatigue away. Because of its relaxing effects, it is suggested to use this type of cannabis at night. It is particularly recommended for people who have trouble sleeping.",
+      "link": "/shop/indica",
+      "linkText": "Shop Indica"
+    },
+    {
+      "id": 2,
+      "title": "Sativa",
+      "image": "Logo (2).png",
+      "description": "Contrary to the deep all-body relaxation that comes with the use of indica strains, sativas are known for increasing the feeling of creativity, enhancing focus and lessening anxiety. This is more of a mind-centered high in terms of how and where you will feel the effects.",
+      "link": "/shop/sativa",
+      "linkText": "Shop Sativa"
+    },
+    {
+      "id": 3,
+      "title": "Hybrids",
+      "image": "Image.png",
+      "description": "Hybrid strains are just that - they combine the head-focused high effects of sativas with the bodily relaxation of indicas. This is ideal for people who really want to sooth any fatigue and worries while also clearing the mind ready to focus fresh on something new.",
+      "link": "/shop/hybrids",
+      "linkText": "Shop Hybrids"
+    }
+  ]
+}

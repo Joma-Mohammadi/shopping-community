@@ -7,17 +7,9 @@ export default function WhyUs() {
       <div className="mx-auto max-w-400 ">
 
         {/* Heading */}
-        <div className="max-w-195">
-          <h2
-            className="
-              text-[34px]
-              font-extrabold
-              leading-[1.05]
-              tracking-[-0.035em]
-              text-[#20242d]
-              sm:text-[46px]
-              lg:text-[58px]
-              xl:text-[62px] ">
+        <div>
+          <h2 className=" text-[34px] font-extrabold  leading-[1.05]  tracking-[-0.035em]
+              text-[#20242d] sm:text-[46px] lg:text-[58px] xl:text-[62px] ">
             {data.section.titleBefore}{" "}
 
             <span className="text-[#f9bd16]">
@@ -40,21 +32,8 @@ export default function WhyUs() {
         </div>
 
         {/* Cards */}
-        <div
-          className="
-            mt-12
-            grid
-            grid-cols-1
-            gap-5
-            sm:mt-14
-            sm:grid-cols-2
-            sm:gap-6
-            lg:mt-14.5
-            lg:grid-cols-3
-            lg:gap-x-7
-            lg:gap-y-9
-          "
-        >
+        <div className=" mt-12 grid grid-cols-1 gap-5 sm:mt-14
+            sm:grid-cols-2 sm:gap-6 lg:mt-14.5 lg:grid-cols-3 lg:gap-x-7 lg:gap-y-9">
           {data.features.map((feature) => (
             <WhyUsItem
               key={feature.id}

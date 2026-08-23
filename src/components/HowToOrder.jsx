@@ -2,6 +2,7 @@ import data from "../data/howToOrder.json";
 import ReferBanner from "./ReferBanner";
 import OrderStep from "./OrderStep";
 import { Link } from "react-router-dom";
+import Button from "./Button"
 
 export default function HowToOrder() {
   return (
@@ -34,13 +35,7 @@ export default function HowToOrder() {
         </div>
 
         {/* Button */}
-        <Link
-          to={data.section.buttonLink}
-          className=" mt-12 inline-flex rounded-fullbg-[#16b52a]
-            px-8  py-2.5 text-[10px] font-semibold  text-white transition hover:bg-[#13a425] sm:mt-14 ">
-          {data.section.button}
-        </Link>
-
+        <Button className="flex items-center mx-auto justify-center">Choose your Weed</Button>
       </div>
     </section>
   );

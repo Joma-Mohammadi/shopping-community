@@ -44,7 +44,7 @@ export default function ProductSection() {
     <section className="w-full bg-white py-8 sm:py-12 lg:py-16 xl:py-20">
       {/* Title */}
       <h2 className="mx-auto max-w-3xl text-center text-2xl font-bold uppercase leading-[1.12] tracking-tight 
-      text-[#20242d] sm:text-4xl lg:text-5xl xl:text-[58px]">
+      text-[#20242d] sm:text-4xl lg:text-5xl">
         {section.title}
       </h2>
 

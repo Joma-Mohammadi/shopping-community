@@ -1,0 +1,150 @@
+{
+  "newsletter": {
+    "title": "UNLOCK 20% OFF YOUR FIRST ORDER",
+    "description": "Reveal coupon code by entering your email",
+    "placeholder": "Email Address",
+    "button": "Reveal coupon"
+  },
+
+  "company": {
+    "name": "TOP SHELF",
+    "country": "BRITISH COLUMBIA",
+    "description": "#1 Canadian top rated online dispensary that meets the customers needs in every single medical marijuana aspect. The team here at TopShelf BC is heavily involved in the Canadian cannabis industry for over 15 years. We strive to provide the top quality products, service and care at the lowest prices you’ll ever find."
+  },
+
+  "quickLinks": {
+    "title": "QUICK LINK",
+    "links": [
+      {
+        "title": "Track Your Order",
+        "path": "/track-order"
+      },
+      {
+        "title": "Shop All",
+        "path": "/shop"
+      },
+      {
+        "title": "Flower",
+        "path": "/category/flower"
+      },
+      {
+        "title": "Edibles",
+        "path": "/category/edibles"
+      },
+      {
+        "title": "Concentrates",
+        "path": "/category/concentrates"
+      },
+      {
+        "title": "Refunds",
+        "path": "/refunds"
+      }
+    ]
+  },
+
+  "quickLinksRight": [
+    {
+      "title": "Mushrooms",
+      "path": "/category/mushrooms"
+    },
+    {
+      "title": "Promotions / Bundles",
+      "path": "/promotions"
+    },
+    {
+      "title": "Support",
+      "path": "/support"
+    },
+    {
+      "title": "Reward",
+      "path": "/rewards"
+    },
+    {
+      "title": "Blog",
+      "path": "/blog"
+    },
+    {
+      "title": "Shipping FAQ",
+      "path": "/shipping-faq"
+    }
+  ],
+
+  "contact": {
+    "title": "CONTACT US",
+    "email": "info@topshelfbc.cc"
+  },
+
+  "more": {
+    "title": "MORE",
+    "columns": [
+      [
+        {
+          "title": "Buy weed online in Canada",
+          "path": "/buy-weed-online/canada"
+        },
+        {
+          "title": "Buy weed online in New Brunswick",
+          "path": "/buy-weed-online/new-brunswick"
+        },
+        {
+          "title": "Buy weed online in Prince Edward Island",
+          "path": "/buy-weed-online/prince-edward-island"
+        },
+        {
+          "title": "Buy weed online in Northwest Territories",
+          "path": "/buy-weed-online/northwest-territories"
+        },
+        {
+          "title": "Buy weed online in Saskatchewan",
+          "path": "/buy-weed-online/saskatchewan"
+        }
+      ],
+      [
+        {
+          "title": "Buy weed online in Manitoba",
+          "path": "/buy-weed-online/manitoba"
+        },
+        {
+          "title": "Buy weed online in Quitebec",
+          "path": "/buy-weed-online/quebec"
+        },
+        {
+          "title": "Buy weed online in British Columbia",
+          "path": "/buy-weed-online/british-columbia"
+        },
+        {
+          "title": "Buy weed online in Ontario",
+          "path": "/buy-weed-online/ontario"
+        },
+        {
+          "title": "Buy weed online in Alberta",
+          "path": "/buy-weed-online/alberta"
+        }
+      ]
+    ]
+  },
+
+  "payments": [
+    "mastercard",
+    "visa",
+    "bitcoin",
+    "amex"
+  ],
+
+  "copyright": "© 2022 Top Shelf BC. All Rights Reserved.",
+
+  "bottomLinks": [
+    {
+      "title": "Out Of Stock",
+      "path": "/out-of-stock"
+    },
+    {
+      "title": "Privacy Policy",
+      "path": "/privacy-policy"
+    },
+    {
+      "title": "Terms & Conditions",
+      "path": "/terms-conditions"
+    }
+  ]
+}

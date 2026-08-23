@@ -2,7 +2,7 @@ export default function FeaturedReview({ featured }) {
   return (
     <section className="flex w-full flex-1 flex-col justify-between rounded-2xl bg-[#075039] p-6 text-white sm:p-8 lg:p-10">
       
-      <h3 className="max-w-xl text-2xl font-semibold leading-tight sm:text-3xl lg:text-[38px]">
+      <h3 className="max-w-67.5 text-2xl font-semibold leading-tight sm:text-3xl lg:text-[38px]">
         {featured.title}
       </h3>
 

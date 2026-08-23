@@ -1,0 +1,57 @@
+{
+  "title": "WEED EDUCATION",
+  "showAll": "Show All",
+  "showLess": "Show Less",
+  "readMore": "Read More",
+  "readLess": "Read Less",
+  "articles": [
+    {
+      "id": 1,
+      "image": "education.png",
+      "date": "January 24, 2023",
+      "title": "12 Mistakes To Avoid When Buying Cannabis Online",
+      "excerpt": "Buying cannabis online can be a great way to get your hands on the products you need without leaving the comfort of your home.",
+      "content": "Buying cannabis online can be a great way to get your hands on the products you need without leaving the comfort of your home. However, there are several mistakes that shoppers should avoid. Always check product information, delivery policies, customer reviews and the reputation of the store before placing an order."
+    },
+    {
+      "id": 2,
+      "image": "education1.png",
+      "date": "January 20, 2023",
+      "title": "How To Store Cannabis and Keep it Fresh and Potent?",
+      "excerpt": "Cannabis packaging has advanced dramatically in recent years, whether your state has a medicinal marijuana programme, legal adult-use weed, or both.",
+      "content": "Cannabis packaging has advanced dramatically in recent years, whether your state has a medicinal marijuana programme, legal adult-use weed, or both. Proper storage is still important. Keeping cannabis away from excessive heat, moisture, direct sunlight and air can help preserve its freshness and quality."
+    },
+    {
+      "id": 3,
+      "image": "education2.png",
+      "date": "January 19, 2023",
+      "title": "The Ultimate Guide to Checking the Quality of Cannabis – 10 Industry Leading Tips",
+      "excerpt": "Quality cannabis is a term used to describe cannabis products that meet specific standards of excellence.",
+      "content": "Quality cannabis is a term used to describe cannabis products that meet specific standards of excellence. It is essential to understand what quality cannabis means before making a purchase. Appearance, aroma, texture, packaging and product information can all help you make a more informed choice."
+    },
+    {
+      "id": 4,
+      "image": "education3.png",
+      "date": "January 15, 2023",
+      "title": "How To Choose The Right Cannabis Product",
+      "excerpt": "Choosing a cannabis product can feel complicated when there are so many options available.",
+      "content": "Choosing a cannabis product can feel complicated when there are so many options available. Understanding the differences between flowers, concentrates, edibles and other product types can make the shopping experience easier. Start by learning about the product and its intended characteristics before making your choice."
+    },
+    {
+      "id": 5,
+      "image": "education4.png",
+      "date": "January 12, 2023",
+      "title": "Cannabis Strains Explained For Beginners",
+      "excerpt": "Understanding cannabis strains is a useful first step for anyone who is new to cannabis products.",
+      "content": "Understanding cannabis strains is a useful first step for anyone who is new to cannabis products. Indica, Sativa and hybrid classifications are commonly used when describing cannabis varieties. Learning the basic differences can help you understand product descriptions and make comparisons."
+    },
+    {
+      "id": 6,
+      "image": "education5.png",
+      "date": "January 8, 2023",
+      "title": "A Simple Guide To Cannabis Product Labels",
+      "excerpt": "Product labels contain useful information that can help shoppers understand what they are buying.",
+      "content": "Product labels contain useful information that can help shoppers understand what they are buying. Pay attention to the product name, category, quantity and other information provided on the packaging. Taking a moment to read the label can help you compare different products more easily."
+    }
+  ]
+}
