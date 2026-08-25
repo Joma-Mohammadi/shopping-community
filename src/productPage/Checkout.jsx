@@ -1062,7 +1062,7 @@ export default function Checkout() {
                                 placeholder={
                                     checkoutData.summary.couponPlaceholder
                                 }
-                                className="h-[43px] min-w-0 flex-1 rounded-lg border border-[#eeeeee] px-4 text-sm outline-none focus:border-[#075039]"
+                                className="h-10.75 min-w-0 flex-1 rounded-lg border border-[#eeeeee] px-4 text-sm outline-none focus:border-[#075039]"
                             />
 
                             <button

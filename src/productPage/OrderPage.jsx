@@ -514,63 +514,24 @@ export default function OrderPage() {
 
                         {/* Point */}
 
-                        <div
-                            className="
-                                flex
-                                justify-between
-                                gap-4
-                                border-t
-                                border-[#eeeeee]
-                                pt-4
-                                text-sm
-                            "
-                        >
+                        <div className=" flex  justify-between gap-4 border-t border-[#eeeeee] pt-4 text-sm ">
                             <span className="text-[#99999d]">
-                                {
-                                    orderComplete.summary
-                                        ?.point
-                                }
+                                {  orderComplete.summary ?.point }
                             </span>
 
                             <span className="font-medium">
-                                - $
-                                {pointDiscount.toFixed(0)}
+                                - ${pointDiscount.toFixed(0)}
                             </span>
                         </div>
 
-
                         {/* Final total */}
 
-                        <div
-                            className="
-                                flex
-                                justify-between
-                                gap-4
-                                border-t
-                                border-[#eeeeee]
-                                pt-4
-                            "
-                        >
-                            <span
-                                className="
-                                    text-sm
-                                    font-medium
-                                    text-[#17191d]
-                                "
-                            >
-                                {
-                                    orderComplete.summary
-                                        ?.total
-                                }
+                        <div className=" flex justify-between gap-4  border-t  border-[#eeeeee]  pt-4">
+                            <span className=" text-sm font-mediumtext-[#17191d] ">
+                                { orderComplete.summary ?.total}
                             </span>
 
-                            <span
-                                className="
-                                    text-lg
-                                    font-semibold
-                                    text-[#ff3517]
-                                "
-                            >
+                            <span className="text-lg font-semibold text-[#ff3517]">
                                 ${total.toFixed(2)}
                             </span>
                         </div>
@@ -580,32 +541,12 @@ export default function OrderPage() {
                 </div>
 
 
-                {/* ==================================================
-                    NEW ORDER
-                ================================================== */}
+                   {/*  NEW ORDER */}
 
-                <div
-                    className="
-                        flex
-                        flex-col
-                        items-center
-                        justify-center
-                        gap-5
-                        pt-7
-                        text-center
-                    "
-                >
+                <div className=" flex flex-col items-center justify-center  gap-5  pt-7 text-center" >
 
-                    <p
-                        className="
-                            text-sm
-                            text-[#a0a0a4]
-                        "
-                    >
-                        {
-                            orderComplete.newOrder
-                                ?.text
-                        }
+                    <p className=" text-sm text-[#a0a0a4] " >
+                        { orderComplete.newOrder  ?.text }
                     </p>
 
 
@@ -614,27 +555,9 @@ export default function OrderPage() {
                             orderComplete.newOrder
                                 ?.link || "/shop"
                         }
-                        className="
-                            flex
-                            h-12
-                            min-w-35
-                            items-center
-                            justify-center
-                            rounded-full
-                            bg-[#08b52a]
-                            px-7
-                            text-sm
-                            font-medium
-                            text-white
-                            transition
-                            hover:bg-[#06a825]
-                            active:scale-95
-                        "
-                    >
-                        {
-                            orderComplete.newOrder
-                                ?.button
-                        }
+                        className=" flex h-12 min-w-35 items-center justify-center rounded-full bg-[#08b52a]
+                         px-7  text-sm  font-medium  text-white  transition hover:bg-[#06a825] active:scale-95">
+                        { orderComplete.newOrder ?.button }
                     </Link>
 
                 </div>
