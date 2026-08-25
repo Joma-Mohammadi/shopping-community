@@ -18,13 +18,13 @@ export default function Header() {
   const { cartCount } = useCart();
 
   return (
-    <header className="bg-white">
+    <header className="bg-white sticky z-50 top-0">
 
       {/* =====================================================
           DESKTOP HEADER
       ====================================================== */}
 
-      <div className="hidden lg:flex mx-auto h-17.5 w-full max-w-450 items-center px-6 xl:px-10">
+      <div className="hidden lg:flex mx-auto h-17.5 w-full max-w-450 items-center px-6 xl:px-10 ">
 
         {/* Logo */}
 
@@ -40,17 +40,17 @@ export default function Header() {
 
         <div className="mx-auto flex items-center gap-2">
 
-          <div className="h-9.5 w-100 rounded-full border border-gray-200">
+          <div className="h-12.5 w-100 rounded-full border border-gray-200">
             <input
               type="text"
               placeholder="Search"
-              className="h-full w-full rounded-full px-5 text-sm outline-none"
+              className="h-full w-full rounded-full px-5  text-sm outline-none"
             />
           </div>
 
           <button
             type="button"
-            className="flex h-9.5 w-9.5 shrink-0 items-center justify-center rounded-full bg-green-600 text-white"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-600 text-white"
           >
             <FaSearch size={16} />
           </button>

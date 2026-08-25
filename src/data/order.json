@@ -1,0 +1,134 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "title": "Shopping Cart",
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "title": "Checkout",
+      "status": "complete"
+    },
+    {
+      "id": 3,
+      "title": "Order Complete",
+      "status": "active"
+    }
+  ],
+
+  "orderComplete": {
+    "title": "Your Order",
+    "paid": "Paid",
+    "total": "TOTAL",
+
+    "shipping": {
+      "title": "Shipping",
+      "value": "New York, US"
+    },
+
+    "shippingOptions": {
+      "title": "Shipping Options",
+      "value": "Same-Day Dispatching"
+    },
+
+    "payment": {
+      "title": "Email Money Transfer",
+      "value": "Interac"
+    },
+
+    "summary": {
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "shippingCosts": "Shipping Costs",
+      "point": "Point",
+      "total": "TOTAL"
+    },
+
+    "pointDiscount": 0,
+
+    "newOrder": {
+      "text": "New Order, Click button below",
+      "button": "Shop Now",
+      "link": "/shop"
+    }
+  },
+
+  "shipping": {
+    "title": "Shipping",
+    "countries": [
+      "Singapore",
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia"
+    ],
+    "provinces": [
+      "New York",
+      "California",
+      "Texas",
+      "Florida",
+      "Ontario",
+      "British Columbia"
+    ],
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "address": "House number and street name",
+      "apartment": "Apartment, suite, unit, etc. (optional)",
+      "city": "Town / City",
+      "province": "Province",
+      "postcode": "Postcode / ZIP",
+      "phone": "Phone number",
+      "email": "Email address"
+    }
+  },
+
+  "differentAddress": {
+    "title": "Ship to a different address?"
+  },
+
+  "orderNotes": {
+    "title": "ORDER NOTES",
+    "placeholder": "Notes about your order, e.g. special notes for delivery."
+  },
+
+  "outOfStock": {
+    "title": "OUT OF STOCK",
+    "options": [
+      "Contact me (With delay)",
+      "Remove item from my order",
+      "Contact me before shipping"
+    ]
+  },
+
+  "heardAboutUs": {
+    "title": "HOW DID YOU HEAR ABOUT US?",
+    "placeholder": "Tell us how you heard about us..."
+  },
+
+  "summary": {
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "shippingCosts": "Shipping Costs",
+    "emailMoneyTransfer": "Email Money Transfer",
+    "couponPlaceholder": "Coupon code",
+    "couponButton": "Apply Coupon",
+    "addressConfirmation": "I confirm that the shipping address provided above is correct.",
+    "emailUpdates": "Keep me updated with news and special offers.",
+    "points": "Points",
+    "placeOrder": "Place Order",
+    "securePayments": "Secure Payments",
+    "shippingCost": 50
+  },
+
+  "payment": {
+    "methods": [
+      "mastercard",
+      "visa",
+      "bitcoin",
+      "interac"
+    ]
+  }
+}

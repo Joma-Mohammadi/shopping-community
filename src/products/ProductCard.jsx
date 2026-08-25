@@ -25,11 +25,11 @@ export default function ProductCard({ product }) {
   return (
     <section className="group min-w-0 w-full">
       {/* Product Image */}
-      <div className="relative  w-full overflow-hidden rounded-xl bg-[#f5f5f5]">
+      <div className="relative flex w-full items-center justify-center overflow-hidden rounded-xl bg-[#f5f5f5]">
         {/* Badge */}
         {product.badge && (
-          <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 
-          text-xs font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
+          <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 text-xs
+          font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
             {product.badge}
           </span>
         )}
@@ -38,7 +38,7 @@ export default function ProductCard({ product }) {
         <img
           src={productImages[product.image]}
           alt={product.title}
-          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="h-50 w-auto object-contain transition-transform duration-500 group-hover:scale-105 sm:h-65"
         />
 
         {/* Out Of Stock */}

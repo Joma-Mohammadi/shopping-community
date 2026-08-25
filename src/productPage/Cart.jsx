@@ -91,7 +91,7 @@ export default function Cart() {
             </span>
           </div>
 
-          <div className=" w-16 bg-gray-300" />
+          <div className="h-px w-16 bg-gray-300" />
 
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#075039]">
@@ -119,14 +119,14 @@ export default function Cart() {
       </div>
 
       {/* Cart */}
-      <section className="mx-auto max-w-310 px-5 py-10 pb-60">
+      <section className="mx-auto max-w-310 px-5 py-10 ">
 
         <div className="grid gap-10 lg:grid-cols-[1fr_450px]">
 
           {/* Products */}
           <div>
 
-            <div className="flex justify-between border-b pb-6">
+            <div className="flex justify-between border-b-2 border-gray-300 pb-6">
               <h1 className="text-2xl font-medium">
                 Your Cart
               </h1>
@@ -142,7 +142,7 @@ export default function Cart() {
               return (
                 <div
                   key={item.id}
-                  className="flex items-center gap-4 border-b py-5"
+                  className="flex items-center gap-4 border-b border-gray-200 py-5"
                 >
 
                   <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg border">
@@ -202,7 +202,7 @@ export default function Cart() {
               );
             })}
 
-            <div className="flex justify-between border-b py-5 text-sm">
+            <div className="flex justify-between border-b border-gray-300 py-5 text-sm">
               <span className="text-gray-400">
                 Subtotal
               </span>
@@ -233,7 +233,7 @@ export default function Cart() {
                     </div>
 
                     <h4 className="text-lg leading-7">
-                      {item.eading}
+                      {item.heading}
                     </h4>
 
                     {item.description && (
@@ -288,17 +288,19 @@ export default function Cart() {
               <input
                 type="text"
                 placeholder={cartData.coupon.placeholder}
-                className="h-12 min-w-0 flex-1 rounded-xl border px-4 outline-none"
+                className="h-12 min-w-0 flex-1 rounded-xl border  border-gray-200 px-4 outline-none "
               />
-
+               
               <button className="rounded-full bg-[#f1faf3] px-5 text-sm text-green-600">
                 {cartData.coupon.button}
               </button>
+  
 
             </div>
-
+          
+                  <hr className="mt-4 mb-0 text-gray-200"/>
             {/* Shipping progress */}
-            <div className="mt-7">
+            <div className="mt-4">
 
               <div className="h-1.5 rounded-full bg-gray-100">
                 <div
@@ -338,7 +340,7 @@ export default function Cart() {
             {/* Checkout */}
             <button
               onClick={() => navigate("/checkout")}
-              className="mt-6 flex h-14 w-full items-center justify-center gap-4 rounded-full bg-[#c8c8c8] text-white transition hover:bg-[#075039]"
+              className="mt-6 flex h-14 w-full items-center justify-center gap-4 rounded-full  text-white bg-green-600 transition  hover:bg-green-700"
             >
               <span>
                 {cartData.buttons.checkout}
@@ -352,7 +354,7 @@ export default function Cart() {
             </button>
 
             {/* Payment */}
-            <div className="mt-6 border-t pt-6">
+            <div className="mt-6 border-t border-gray-200 pt-6">
 
               <p className="text-xs uppercase tracking-wider text-gray-400">
                 {cartData.payment.title}

@@ -4,18 +4,22 @@
     "Checkout",
     "Order Complete"
   ],
+
   "shipping": {
     "freeShippingLimit": 100,
     "shippingCost": 50
   },
+
   "coupon": {
     "placeholder": "Coupon code",
     "button": "Apply Coupon"
   },
+
   "buttons": {
     "continueShopping": "Continue Shopping",
     "checkout": "Checkout"
   },
+
   "delivery": [
     {
       "title": "Delivery",
@@ -24,7 +28,7 @@
       "icon": "truck"
     },
     {
-      "title": "",
+      "title": "Store Delivery",
       "heading": "Free next day delivery to stores.",
       "description": "Home delivery is $4.99 for orders under $100 and is FREE for all orders over $100",
       "icon": "box"
@@ -36,6 +40,7 @@
       "icon": "return"
     }
   ],
+
   "payment": {
     "title": "Secure payments provided by",
     "methods": [

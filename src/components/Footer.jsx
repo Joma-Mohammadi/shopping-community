@@ -3,24 +3,16 @@ import { Link } from "react-router-dom";
 import Button from './Button'
 import logo from "../images/logo.png";
 
-import {
-    FaCcMastercard,
-    FaCcVisa,
-    FaBitcoin,
-    FaCcAmex,
-    FaPaperPlane,
-} from "react-icons/fa";
-
-import { GiThreeLeaves } from "react-icons/gi";
 
 import footerData from "../data/footer.json";
 
-const paymentIcons = {
-    mastercard: FaCcMastercard,
-    visa: FaCcVisa,
-    bitcoin: FaBitcoin,
-    amex: FaCcAmex,
-};
+//  import icons Payments
+
+
+import mastercard from "../icons/mastercard.png";
+import mastercard1 from "../icons/mastercard1.png";
+import mastercard2 from "../icons/mastercard2.png";
+import mastercard3 from "../icons/mastercard3.png";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
@@ -192,25 +184,23 @@ export default function Footer() {
 
 
                         {/* Payment */}
-
-                        <div className="mt-7 flex items-center gap-8">
-
-                            {footerData.payments.map((payment) => {
-                                const Icon = paymentIcons[payment];
-
-                                return (
+                        <div className="mt-7 flex items-center gap-4">
+                            {[mastercard, mastercard1, mastercard2, mastercard3].map(
+                                (payment, index) => (
                                     <div
-                                        key={payment}
-                                        className="flex h-5 w-8.75 items-center justify-center rounded-[3px] bg-white"
+                                        key={index}
+                                        className="flex h-8 w-12 items-center justify-center"
                                     >
-                                        <Icon
-                                            size={23}
-                                            className="text-gray-700"
+                                        <Link>
+                                        <img
+                                            src={payment}
+                                            alt={`Payment method ${index + 1}`}
+                                            className="max-h-full max-w-full object-contain"
                                         />
+                                        </Link>
                                     </div>
-                                );
-                            })}
-
+                                )
+                            )}
                         </div>
 
                     </div>

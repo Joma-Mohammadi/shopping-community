@@ -1,0 +1,94 @@
+{
+  "steps": [
+    {
+      "title": "Shopping Cart",
+      "path": "/cart",
+      "status": "complete"
+    },
+    {
+      "title": "Checkout",
+      "path": "/checkout",
+      "status": "active"
+    },
+    {
+      "title": "Order Complete",
+      "path": "/order-complete",
+      "status": "pending"
+    }
+  ],
+  "shipping": {
+    "title": "Shipping",
+    "requiredMark": "*",
+    "countries": [
+      "Singapore",
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia"
+    ],
+    "provinces": [
+      "New York",
+      "California",
+      "Texas",
+      "Ontario",
+      "British Columbia"
+    ],
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "address": "House number and street name",
+      "apartment": "Apartment, suite, unit, etc. (optional)",
+      "city": "Town / City",
+      "province": "Select province",
+      "postcode": "Postcode / Zip",
+      "phone": "Phone (optional)",
+      "email": "Email address",
+      "notes": "Notes about your order, e.g. special notes for delivery."
+    }
+  },
+  "differentAddress": {
+    "title": "Ship to a different Address?"
+  },
+  "orderNotes": {
+    "title": "ORDER NOTES (OPTIONAL)",
+    "placeholder": "Notes about your order, e.g. special notes for delivery."
+  },
+  "outOfStock": {
+    "title": "What would you like us to do if an Item is out os Stock?",
+    "options": [
+      "Contact me (With delay)",
+      "Refund me",
+      "Remove the item"
+    ]
+  },
+  "heardAboutUs": {
+    "title": "Where did you hear About Us?",
+    "placeholder": "Notes about your order, e.g. special notes for delivery."
+  },
+  "summary": {
+    "title": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "shippingCosts": "Shipping Costs",
+    "emailMoneyTransfer": "Email Money Transfer",
+    "couponPlaceholder": "Coupon code",
+    "couponButton": "Apply Coupon",
+    "addressConfirmation": "I confirm that my address is 100% correct and WILL NOT hold Top Shelf BC liable if this shipment is sent to an incorrect address.",
+    "emailUpdates": "Sign me up to receive email updates and news (optional)",
+    "points": "Your point",
+    "placeOrder": "Place Order",
+    "securePayments": "Secure payments provided by",
+    "shippingCost": 50
+  },
+  "payment": {
+    "methods": [
+      "mastercard",
+      "visa",
+      "bitcoin",
+      "interac"
+    ]
+  }
+}
+
+
