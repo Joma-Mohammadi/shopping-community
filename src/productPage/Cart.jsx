@@ -10,6 +10,9 @@ import {
   FaCreditCard,
 } from "react-icons/fa";
 
+// Button 
+import Button from "../components/Button";
+
 //  file
 import { useCart } from "../context/CartContext";
 import cartData from "../data/cartPage.json";
@@ -86,12 +89,12 @@ export default function Cart() {
               <FaShoppingBag size={14} />
             </span>
 
-            <span className="hidden text-sm font-semibold sm:block">
+            <span className=" text-sm font-semibold sm:block">
               {cartData.steps[0]}
             </span>
           </div>
 
-          <div className="h-px w-16 bg-gray-300" />
+          <div className="h-px w-12 bg-gray-300 sm:w-16" />
 
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#075039]">
@@ -103,7 +106,7 @@ export default function Cart() {
             </span>
           </div>
 
-          <div className="h-px w-16 bg-gray-300" />
+          <div className="h-px w-12 bg-gray-300 sm:w-16" />
 
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#075039]">
@@ -338,7 +341,7 @@ export default function Cart() {
             </Link>
 
             {/* Checkout */}
-            <button
+            <Button
               onClick={() => navigate("/checkout")}
               className="mt-6 flex h-14 w-full items-center justify-center gap-4 rounded-full  text-white bg-green-600 transition  hover:bg-green-700"
             >
@@ -351,7 +354,7 @@ export default function Cart() {
               <span>
                 ${total.toFixed(2)}
               </span>
-            </button>
+            </Button>
 
             {/* Payment */}
             <div className="mt-6 border-t border-gray-200 pt-6">

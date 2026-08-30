@@ -91,7 +91,7 @@ export default function OrderStep({ step }) {
         className="
           mx-auto
           mt-3
-          max-w-[420px]
+          max-w-105
           text-sm
           leading-[1.8]
           text-gray-300

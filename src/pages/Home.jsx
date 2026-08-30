@@ -15,11 +15,11 @@ export default function Home() {
       <Hero />
       <Feature />
 
-      <main className="mx-auto w-full max-w-400 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-400 px-4 sm:px-6 lg:px-8">
         <ProductSection />
         <Testimonials />
         <ChooseWeed />
-      </main>
+      </div>
       <HowToOrder />
       <div className=" mx-auto w-full max-w-400 px-4 sm:px-6 lg:px-8">
         <WhyUs />

@@ -265,26 +265,30 @@ export default function Checkout() {
     return (
         <main className="min-h-screen bg-white">
 
-
+            {/* Steps */}
 
             <div className="bg-[#f5f5f5]">
-                <div className="mx-auto flex max-w-200 items-center justify-center px-5 py-5 sm:max-w-225">
+                <div className="mx-auto flex w-full max-w-200 items-center justify-center px-3 py-4 sm:px-5 sm:py-5">
                     {checkoutData.steps.map((step, index) => {
-                        const isComplete =
-                            step.status === "complete";
-                        const isActive =
-                            step.status === "active";
+                        const isComplete = step.status === "complete";
+                        const isActive = step.status === "active";
+
                         return (
                             <div
-                                key={step.title} className="flex items-center">
-                                <div className="flex items-center gap-2">
-                                    <div className={`flex h-7 w-7 items-center justify-center rounded-full
-                                        ${isComplete
-                                            ? "bg-[#d5e4df] text-[#075039]"
-                                            : isActive
-                                             ? "bg-[#075039] text-white"
-                                             : "border border-[#d8dedb] bg-white text-[#075039]"
-                                        }`}>
+                                key={step.title}
+                                className="flex min-w-0 items-center justify-center"
+                            >
+                                <div className="flex items-center gap-1.5 sm:gap-2">
+                                    {/* Icon */}
+                                    <div
+                                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full
+                                             ${isComplete
+                                                ? "bg-[#d5e4df] text-[#075039]"
+                                                : isActive
+                                                    ? "bg-[#075039] text-white"
+                                                    : "border border-[#d8dedb] bg-white text-[#075039]"
+                                            }`}
+                                    >
                                         {isComplete ? (
                                             <FaCheck size={11} />
                                         ) : isActive ? (
@@ -294,31 +298,40 @@ export default function Checkout() {
                                         )}
                                     </div>
 
-                                    <span className={` whitespace-nowrap text-[13px]
-                                       ${isActive || isComplete
-                                                ? "font-medium text-[#075039]"
-                                                : "text-[#88888c]"
-                                            }`} >
-                                          {step.title}
-                                     </span>
+                                    {/* Desktop Text */}
+                                    <span
+                                        className={`hidden text-[13px] sm:block ${isActive || isComplete
+                                            ? "font-medium text-[#075039]"
+                                            : "text-[#88888c]"
+                                            }`}
+                                    >
+                                        {step.title}
+                                    </span>
+
+                                    {/* Mobile - Active Text Only */}
+                                    {isActive && (
+                                        <span className="block max-w-30 truncate text-[11px] font-medium text-[#075039] sm:hidden">
+                                            {step.title}
+                                        </span>
+                                    )}
                                 </div>
 
-                                {index <
-                                    checkoutData.steps.length - 1 && (
-                                        <div className="mx-4 h-px w-16 bg-[#cfd8d4] sm:w-24" />
-                                    )}
+                                {/* Equal Lines */}
+                                {index < checkoutData.steps.length - 1 && (
+                                    <div className="mx-2 h-px w-8 shrink-0 bg-[#cfd8d4] sm:mx-4 sm:w-[74.5px]" />
+                                )}
                             </div>
                         );
                     })}
                 </div>
             </div>
 
-          {/* ---------------- Main ----------- */}
-   
+            {/* ---------------- Main ----------- */}
+
             <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8 lg:py-10">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px]">
 
-          {/* ------------- MAIN LEFT ------------- */}
+                    {/* ------------- MAIN LEFT ------------- */}
 
                     <form id="checkout-form"
                         onSubmit={handleSubmit}
@@ -338,7 +351,7 @@ export default function Checkout() {
 
                         </div>
 
-                           {/* FIRST / LAST NAME */}
+                        {/* FIRST / LAST NAME */}
 
                         <div className="grid grid-cols-1 gap-5 pt-7 sm:grid-cols-2">
 
@@ -438,7 +451,7 @@ export default function Checkout() {
                                 }
                                 className={inputClass("address")}
                             />
-                             <FieldError name="address" errors={errors} />
+                            <FieldError name="address" errors={errors} />
 
                             <input
                                 type="text"
@@ -606,7 +619,7 @@ export default function Checkout() {
 
                         <div className="my-7 border-t border-[#dddddd]" />
 
-                      {/* --------- DIFFERENT ADDRESS TOGGLE ---------- */}
+                        {/* --------- DIFFERENT ADDRESS TOGGLE ---------- */}
 
                         <label className="flex cursor-pointer items-center gap-3">
 
@@ -619,7 +632,7 @@ export default function Checkout() {
                                         e.target.checked
                                     )
                                 }
-                                className="h-5 w-5 accent-[#075039]"
+                                className="h-5 w-5 text-white accent-[#17AF26]"
                             />
 
                             <span className="text-sm text-[#17191d]">
@@ -628,7 +641,7 @@ export default function Checkout() {
 
                         </label>
 
-                         {/* -----------  DIFFERENT ADDRESS FORM  ----------*/}
+                        {/* -----------  DIFFERENT ADDRESS FORM  ----------*/}
 
                         {form.differentAddress && (
                             <div className="mt-7">
@@ -772,7 +785,7 @@ export default function Checkout() {
                                         placeholder={
                                             checkoutData.shipping.placeholders.apartment
                                         }
-                                        className="mt-2 h-11 w-full rounded-[7px] border border-[#eeeeee] px-4 text-sm outline-none focus:border-[#075039]"
+                                        className="mt-2 h-11 w-full rounded-[7px] border border-[#C8C9CB] px-4 text-sm outline-none focus:border-[#075039]"
                                     />
 
                                 </div>
@@ -874,9 +887,7 @@ export default function Checkout() {
                             </div>
                         )}
 
-                        {/* =================================================
-                ORDER NOTES
-            ================================================== */}
+                             {/* -------  ORDER NOTES ---------- */}
 
                         <div className="mt-7">
 
@@ -895,16 +906,14 @@ export default function Checkout() {
                                 placeholder={
                                     checkoutData.orderNotes.placeholder
                                 }
-                                className="min-h-22.5 w-full resize-none rounded-[7px] border border-[#eeeeee] px-4 py-4 text-sm outline-none focus:border-[#075039]"
+                                className="min-h-22.5 w-full resize-none rounded-[7px] border border-[#C8C9CB] px-4 py-4 text-sm outline-none focus:border-[#075039]"
                             />
 
                         </div>
 
-                        <div className="my-7 border-t border-[#dddddd]" />
+                        <div className="my-7 border-t border-[#C8C9CB]" />
 
-                        {/* =================================================
-                OUT OF STOCK
-            ================================================== */}
+                          {/* ---------- OUT OF STOCK   ------------- */}
 
                         <div>
 
@@ -920,7 +929,7 @@ export default function Checkout() {
                                         e.target.value
                                     )
                                 }
-                                className="mt-5 h-11 w-full rounded-[7px] border border-[#eeeeee] bg-white px-4 text-sm outline-none focus:border-[#075039]"
+                                className="mt-5 h-11 w-full rounded-[7px] border border-[#C8C9CB] bg-white px-4 text-sm outline-none focus:border-[#075039]"
                             >
 
                                 {checkoutData.outOfStock.options.map(
@@ -938,9 +947,9 @@ export default function Checkout() {
 
                         </div>
 
-                        <div className="my-7 border-t border-[#dddddd]" />
+                        <div className="my-7 border-t border-[#C8C9CB]" />
 
-                             {/* ----------  HEARD ABOUT US ------------- */}
+                        {/* ----------  HEARD ABOUT US ------------- */}
 
                         <div>
 
@@ -959,16 +968,16 @@ export default function Checkout() {
                                 placeholder={
                                     checkoutData.heardAboutUs.placeholder
                                 }
-                                className="mt-5 min-h-22.5 w-full resize-none rounded-[7px] border border-[#eeeeee] px-4 py-4 text-sm outline-none focus:border-[#075039]"
+                                className="mt-5 min-h-22.5 w-full resize-none rounded-[7px] border border-[#C8C9CB] px-4 py-4 text-sm outline-none focus:border-[#075039]"
                             />
 
                         </div>
 
                     </form>
 
-                          {/* ----------- RIGHT - SUMMARY ----------- */}
+                    {/* ----------- RIGHT - SUMMARY ----------- */}
 
-                    <aside className="h-fit rounded-[17px] border border-[#eeeeee] bg-white p-6 lg:sticky lg:top-6">
+                    <aside className="h-fit rounded-[17px] border border-[#C8C9CB] bg-white p-6 lg:sticky lg:top-6">
 
                         {/* Subtotal */}
 
@@ -1028,7 +1037,7 @@ export default function Checkout() {
 
                         </div>
 
-                        <div className="my-5 border-t border-[#eeeeee]" />
+                        <div className="my-5 border-t border-[#C8C9CB]" />
 
                         {/* Payment method */}
 
@@ -1062,7 +1071,8 @@ export default function Checkout() {
                                 placeholder={
                                     checkoutData.summary.couponPlaceholder
                                 }
-                                className="h-10.75 min-w-0 flex-1 rounded-lg border border-[#eeeeee] px-4 text-sm outline-none focus:border-[#075039]"
+                                className="h-10.75 min-w-0 flex-1 rounded-lg border border-[#C8C9CB] 
+                                px-4 text-sm outline-none focus:border-[#075039]"
                             />
 
                             <button
@@ -1077,7 +1087,7 @@ export default function Checkout() {
 
                         {/* Confirm address */}
 
-                        <label className="mt-6 flex cursor-pointer gap-3 border-t border-[#eeeeee] pt-6">
+                        <label className="mt-6 flex cursor-pointer gap-3 border-t border-[#C8C9CB] pt-6">
 
                             <input
                                 type="checkbox"
@@ -1088,7 +1098,7 @@ export default function Checkout() {
                                         e.target.checked
                                     )
                                 }
-                                className="mt-1 h-5 w-5 shrink-0 accent-[#075039]"
+                                className="mt-1 h-5 w-5 shrink-0 accent-[#17AF26]"
                             />
 
                             <span className="text-[13px] leading-5 text-[#737379]">
@@ -1112,7 +1122,7 @@ export default function Checkout() {
                                         e.target.checked
                                     )
                                 }
-                                className="mt-1 h-5 w-5 shrink-0 accent-[#075039]"
+                                className="mt-1 h-5 w-5 shrink-0 accent-[#17AF26]"
                             />
 
                             <span className="text-[13px] leading-5 text-[#737379]">
@@ -1121,9 +1131,9 @@ export default function Checkout() {
 
                         </label>
 
-                      {/* --------------  POINTS - CONTROLLED BY USER -------------------- */}
+                        {/* --------------  POINTS - CONTROLLED BY USER -------------------- */}
 
-                        <div className="mt-5 border-t border-[#eeeeee] pt-5">
+                        <div className="mt-5 border-t border-[#C8C9CB] pt-5">
 
                             <div className="flex items-center justify-between">
 
@@ -1153,14 +1163,14 @@ export default function Checkout() {
                                         setUsePoints((current) => !current)
                                     }
                                     className={` relative h-6 w-11 rounded-full p-0.5 transition  ${usePoints
-                                            ? "bg-[#08b52a]"
-                                            : "bg-[#c8c9cb]"
+                                        ? "bg-[#08b52a]"
+                                        : "bg-[#c8c9cb]"
                                         }`}>
 
                                     <span
                                         className={`block h-5 w-5 rounded-full bg-white shadow-sm transition-transform ${usePoints
-                                                ? "translate-x-5"
-                                                : "translate-x-0"
+                                            ? "translate-x-5"
+                                            : "translate-x-0"
                                             }`} />
 
                                 </button>
@@ -1183,21 +1193,16 @@ export default function Checkout() {
                                         value={points}
                                         onChange={(e) => {
                                             const value = Math.min(
-                                                Math.max(
-                                                    Number(e.target.value) || 0,
-                                                    0
-                                                ),
+                                                Math.max( Number(e.target.value) || 0, 0 ),
                                                 points
                                             );
 
                                             setPoints(value);
                                         }}
-                                        className="h-10 w-full rounded-[7px] border border-[#eeeeee] px-3 text-sm outline-none focus:border-[#075039]"
-                                    />
-
+                                        className="h-10 w-full rounded-[7px] border border-[#C8C9CB] px-3 text-sm outline-none
+                                         focus:border-[#075039]" />
                                 </div>
                             )}
-
                         </div>
 
                         {/* Place Order */}
@@ -1222,7 +1227,7 @@ export default function Checkout() {
 
                         {/* Payment methods */}
 
-                        <div className="mt-6 border-t border-[#eeeeee] pt-5">
+                        <div className="mt-6 border-t border-[#C8C9CB] pt-5">
 
                             <p className="mb-4 text-[11px] uppercase tracking-[1.3px] text-[#88888c]">
                                 {checkoutData.summary.securePayments}
@@ -1234,7 +1239,7 @@ export default function Checkout() {
                                     (method) => (
                                         <div
                                             key={method}
-                                            className="flex h-8 w-12 items-center justify-center rounded-md border border-[#eeeeee] bg-white"
+                                            className="flex h-8 w-12 items-center justify-center rounded-md border border-[#C8C9CB] bg-white"
                                         >
 
                                             <img

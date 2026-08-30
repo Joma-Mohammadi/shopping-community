@@ -53,7 +53,7 @@
       "priceUnit": "",
       "oldPrice": "$200.00",
       "badge": "",
-      "stock": true,
+      "stock": false,
       "sizes": ["28g", "1/2lb", "1/4lb"]
     },
     {

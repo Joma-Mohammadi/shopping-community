@@ -23,11 +23,11 @@ export default function AnnouncementBar() {
           seconds -= 1;
         } else if (minutes > 0) {
           minutes -= 1;
-          seconds = 59;
+          seconds = 60;
         } else if (hours > 0) {
           hours -= 1;
-          minutes = 59;
-          seconds = 59;
+          minutes = 60;
+          seconds = 60;
         } else {
           clearInterval(timer);
         }
@@ -49,9 +49,10 @@ export default function AnnouncementBar() {
 
   return (
     <div className="min-h-8 bg-[#075039]">
-      <div className="flex min-h-8 w-full items-center justify-center gap-2 whitespace-nowrap px-2 text-[9px] text-gray-200 sm:gap-4 sm:px-4 sm:text-sm md:text-[15px]">
+      <div className="flex min-h-8 w-full items-center justify-center gap-2 whitespace-nowrap px-2
+       text-[9px] text-gray-200 sm:gap-4 sm:px-4 sm:text-sm md:text-[15px]">
 
-        <span className="font-normal tracking-[0.1px] sm:tracking-[0.2px]">
+        <span className="font-normal tracking-[0.1px] sm:tracking-[0.5px]">
           {announcement.text}
         </span>
 

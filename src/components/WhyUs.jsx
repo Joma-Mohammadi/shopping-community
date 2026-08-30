@@ -8,8 +8,8 @@ export default function WhyUs() {
 
         {/* Heading */}
         <div>
-          <h2 className=" text-[34px] font-extrabold  leading-[1.05]  tracking-[-0.035em]
-              text-[#20242d] sm:text-[46px] lg:text-[58px] xl:text-[62px] ">
+          <h2 className=" text-[28px] font-extrabold  leading-[1.06]  tracking-[-0.035em]
+              text-[#20242d] sm:text-[46px] lg:text-[58px] xl:text-[64px] ">
             {data.section.titleBefore}{" "}
 
             <span className="text-[#f9bd16]">

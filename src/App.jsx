@@ -2,13 +2,14 @@ import { Route, Routes } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 import CartLayout from "./layouts/CartLayout";
-
 import Home from "./pages/Home";
 import Account from "./pages/Account";
 import Cart from "./productPage/Cart";
 import Hero from "./components/Hero";
 import Checkout from "./productPage/Checkout";
 import OrderPage from './productPage/OrderPage'
+import CategoryPage from "./layouts/CategoryPage";
+import ShopAll from "./categoryPage/ShopAll";
 
 export default function App() {
   return (
@@ -26,6 +27,12 @@ export default function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-complete" element={<OrderPage/>}/>
       </Route>
+
+      <Route element={<CategoryPage/>}>
+          <Route path="/shop" element={<ShopAll/>}/>
+          
+      </Route>
+
     </Routes>
   );
 }

@@ -62,22 +62,8 @@ export default function ChooseWeed() {
 
         {/* Products */}
         {filteredProducts.length > 0 ? (
-          <div
-            className="
-              mt-7
-              grid
-              grid-cols-2
-              gap-x-3
-              gap-y-8
-              sm:mt-8
-              sm:grid-cols-3
-              sm:gap-x-5
-              sm:gap-y-9
-              lg:grid-cols-4
-              lg:gap-x-6
-              lg:gap-y-10
-            "
-          >
+          <div className=" mt-7 grid grid-cols-2 gap-x-3 gap-y-8 sm:mt-8 sm:grid-cols-3
+             sm:gap-x-5 sm:gap-y-9 lg:grid-cols-4 lg:gap-x-6lg:gap-y-10">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

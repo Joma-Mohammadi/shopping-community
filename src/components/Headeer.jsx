@@ -20,9 +20,7 @@ export default function Header() {
   return (
     <header className="bg-white sticky z-50 top-0">
 
-      {/* =====================================================
-          DESKTOP HEADER
-      ====================================================== */}
+           {/*  DESKTOP HEADER */}
 
       <div className="hidden lg:flex mx-auto h-17.5 w-full max-w-450 items-center px-6 xl:px-10 ">
 
@@ -50,7 +48,7 @@ export default function Header() {
 
           <button
             type="button"
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-600 text-white"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-600 text-white cursor-pointer"
           >
             <FaSearch size={16} />
           </button>
@@ -84,9 +82,7 @@ export default function Header() {
       </div>
 
 
-      {/* =====================================================
-          MOBILE HEADER
-      ====================================================== */}
+          {/*  MOBILE HEADER */}
 
       <div className="lg:hidden">
 
@@ -140,9 +136,7 @@ export default function Header() {
         </div>
 
 
-        {/* =================================================
-            MOBILE NAVIGATION
-        ================================================== */}
+               {/*   MOBILE NAVIGATION */}
 
         <div
           className={`
@@ -197,9 +191,7 @@ export default function Header() {
         </div>
 
 
-        {/* =================================================
-            MOBILE SEARCH
-        ================================================== */}
+        {/*    MOBILE SEARCH      */}
 
         <div className="flex items-center gap-3 px-5 py-6">
 
@@ -231,9 +223,7 @@ export default function Header() {
       </div>
 
 
-      {/* =====================================================
-          DESKTOP NAVIGATION
-      ====================================================== */}
+         {/*  DESKTOP NAVIGATION */}
 
       <nav className="hidden border-t border-gray-100 lg:block">
 

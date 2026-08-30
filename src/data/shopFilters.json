@@ -1,0 +1,35 @@
+
+{
+  "categories": [
+    { "id": "sales", "label": "Sales", "count": 12 },
+    { "id": "cannabis", "label": "Cannabis", "count": 430 },
+    { "id": "pre-rolls", "label": "Pre-Rolls", "count": 40 },
+    { "id": "cbd-oil", "label": "CBD Oil", "count": 20 },
+    { "id": "magic-mushrooms", "label": "Mushrooms", "count": 34 },
+    { "id": "extracts", "label": "Extracts", "count": 26 },
+    { "id": "edibles", "label": "Edibles", "count": 32 },
+    { "id": "vape-pens", "label": "Vape Pens", "count": 12 },
+    { "id": "accessories", "label": "Accessories", "count": 10 },
+    { "id": "bath-body", "label": "Bath & Body", "count": 8 },
+    { "id": "bundles", "label": "Bundles", "count": 24 },
+    { "id": "wholesale", "label": "Wholesale", "count": 28 }
+  ],
+  "orderBy": [
+    { "id": "default", "label": "Default" },
+    { "id": "reviews", "label": "Review Count" },
+    { "id": "popularity", "label": "Popularity" },
+    { "id": "rating", "label": "Average Rating" },
+    { "id": "newest", "label": "Newness" },
+    { "id": "low-high", "label": "Price: Low to High" },
+    { "id": "high-low", "label": "Price: High to Low" },
+    { "id": "random", "label": "Random Products" },
+    { "id": "name", "label": "Product Name" }
+  ],
+  "reviews": [
+    { "id": 5, "label": "★★★★★" },
+    { "id": 4, "label": "★★★★☆" },
+    { "id": 3, "label": "★★★☆☆" },
+    { "id": 2, "label": "★★☆☆☆" },
+    { "id": 1, "label": "★☆☆☆☆" }
+  ]
+}

@@ -1,5 +1,5 @@
-import Button from '../components/Button'
-import  { useCart } from "../context/CartContext";
+import Button from "../components/Button";
+import { useCart } from "../context/CartContext";
 
 import product2 from "../images/product2.png";
 import product3 from "../images/product3.png";
@@ -8,7 +8,6 @@ import product5 from "../images/product5.png";
 import product6 from "../images/product6.png";
 import product7 from "../images/product7.png";
 import product8 from "../images/product8.png";
-
 
 const productImages = {
   "product2.png": product2,
@@ -22,111 +21,96 @@ const productImages = {
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const image = productImages[product.image];
+
   return (
-    <section className="group min-w-0 w-full">
-      {/* Product Image */}
-      <div className="relative flex w-full items-center justify-center overflow-hidden rounded-xl bg-[#f5f5f5]">
-        {/* Badge */}
+    <section className="group min-w-0">
+
+      <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-xl bg-white">
+
         {product.badge && (
-          <span className="absolute left-0 top-0 z-20 rounded-br-lg bg-[#f9bd16] px-3 py-1.5 text-xs
-          font-semibold text-white sm:px-4 sm:py-2 sm:text-sm">
+          <span className="absolute left-0 top-0 z-10 rounded-br-lg bg-[#f9bd16] px-3 py-2 text-xs text-white">
             {product.badge}
           </span>
         )}
 
-        {/* Product Image */}
-        <img
-          src={productImages[product.image]}
-          alt={product.title}
-          className="h-50 w-auto object-contain transition-transform duration-500 group-hover:scale-105 sm:h-65"
-        />
+        {image && (
+          <img
+            src={image}
+            alt={product.title}
+            className="h-full w-auto object-contain transition duration-300 group-hover:scale-105"
+          />
+        )}
 
-        {/* Out Of Stock */}
-        {product.image === "product3.png" && (
-          <div className="absolute inset-0 z-30 flex items-center justify-center">
-            <span className="flex items-center justify-center rounded-full bg-[#05422C4D]/30 px-5 py-3 text-xs
-             font-semibold text-white shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-lg backdrop-saturate-170 
-             sm:px-7 sm:py-4 sm:text-sm">
+        {!product.stock && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="rounded-full bg-green/25 px-6 py-3 text-xs text-white backdrop-blur">
               Out Of Stock
             </span>
           </div>
         )}
       </div>
 
-      {/* Product Info */}
-      <div className="px-1 pt-5 text-center sm:pt-6">
-        <p className="text-xs font-medium text-gray-400 sm:text-sm">
+      <div className="pt-4 text-center">
+
+        <p className="text-xs text-gray-400">
           {product.category}
         </p>
 
-        <h3 className="mt-2 min-h-12 text-sm font-medium leading-6 text-[#20242d] sm:mt-3 sm:min-h-13 sm:text-lg">
+        <h3 className="mt-2 min-h-12 text-sm font-medium leading-5 text-[#20242d]">
           {product.title}
         </h3>
 
-        {/* Rating */}
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
-          <span className="text-yellow-500">★</span>
-
-          <span className="font-medium">
-            {product.rating}
-          </span>
-
-          <span className="text-gray-400">|</span>
-
-          <span className="font-medium">
-            {product.reviews}
-          </span>
-
-          <span className="text-gray-400">
-            Reviews
-          </span>
+        <div className="mt-3 text-xs">
+          <span className="text-[#f4b400]">★</span>{" "}
+          {product.rating}
+          <span className="mx-2 text-gray-300">|</span>
+          {product.reviews}{" "}
+          <span className="text-gray-400">Reviews</span>
         </div>
 
-        {/* Strain */}
-        <div className="mt-3 inline-block rounded bg-[#edf4f0] px-3 py-1 text-xs text-[#075039]">
+        <span className="mt-3 inline-block rounded bg-[#edf4f0] px-3 py-1 text-xs text-[#075039]">
           {product.strain}
-        </div>
+        </span>
 
-        {/* Price */}
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <div className="mt-4">
           {product.oldPrice && (
-            <span className="text-sm text-gray-400 line-through">
+            <span className="mr-2 text-xs text-gray-400 line-through">
               {product.oldPrice}
             </span>
           )}
 
-          <span className="text-base font-medium text-red-500 sm:text-lg">
+          <span className="text-sm font-medium text-red-500">
             {product.price}
           </span>
 
           {product.priceUnit && (
-            <span className="text-xs text-gray-400 sm:text-sm">
+            <span className="ml-1 text-xs text-gray-400">
               {product.priceUnit}
             </span>
           )}
         </div>
 
-        {/* Sizes */}
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {product.sizes.map((size) => (
+        <div className="mt-4 flex justify-center gap-2">
+          {product.sizes?.map((size) => (
             <button
               key={size}
               type="button"
-              className="rounded border border-gray-100 px-2.5 py-1.5 text-xs text-gray-700 transition hover:border-gray-300 sm:px-3 sm:py-2"
+              className="rounded border border-gray-100 px-2 py-1 text-[10px]"
             >
               {size}
             </button>
           ))}
         </div>
 
-        {/* Add Cart */}
         <Button
           type="button"
           onClick={() => addToCart(product)}
-          className="mx-auto h-11 w-30"
+          className="mx-auto mt-4 h-10 w-28"
         >
           Add to Cart
         </Button>
+
       </div>
     </section>
   );

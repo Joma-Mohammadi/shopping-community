@@ -143,69 +143,83 @@ export default function OrderPage() {
             {/* STEPS */}
 
             <section className="bg-[#f5f5f5]">
-
-                <div className=" mx-auto flex w-full max-w-250 items-center justify-center overflow-x-auto px-4 py-4 sm:px-6 sm:py-5 ">
+                <div className="mx-auto flex w-full items-center justify-center overflow-hidden px-3 py-4 sm:px-6 sm:py-5">
 
                     {orderData.steps?.map((step, index) => {
+                        const isComplete = step.status === "complete";
+                        const isActive = step.status === "active";
 
-                        const isComplete =
-                            step.status === "complete";
 
-                        const isActive =
-                            step.status === "active";
+                        const nextStep = orderData.steps[index + 1];
+                        const isNextActive =
+                            nextStep &&
+                            (nextStep.status === "active" ||
+                                nextStep.status === "complete");
 
                         return (
                             <div
                                 key={step.id}
-                                className="flex shrink-0 items-center ">
-                                {/*  STEP  */}
+                                className="flex shrink-0 items-center"
+                            >
 
-                                <div className="flex items-center gap-2 ">
+                                {/* STEP */}
+                                <div className="flex items-center gap-2 sm:gap-2">
+
                                     {/* Circle */}
-                                    <div className={`
-                                flex h-7 w-7 shrink-0 items-center justify-center rounded-full
-                                 ${isComplete ? "bg-green-100 text-green-800"
-                                            : isActive
-                                                ? "bg-green-800 text-white"
-                                                : "border border-[#d8dedb] bg-white text-[#075039]"
-                                        }`} >
-
+                                    <div
+                                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full
+                                             ${isComplete
+                                                ? "bg-[#C3D2CC] text-[#05422C]"
+                                                : isActive
+                                                    ? "bg-[#05422C] text-white"
+                                                    : ""
+                                            }
+                            `}
+                                    >
                                         {isComplete ? (
                                             <FaCheck size={11} />
-                                        ) : (
+                                        ) : isActive ? (
                                             <FaShoppingBag size={11} />
+                                        ) : (
+                                            <FaBoxOpen size={11} />
                                         )}
-
                                     </div>
-                                    {/* Step title */}
 
-                                    <span className={` whitespace-nowrap text-[12px] sm:text-[13px]
-
-                                ${isComplete || isActive
-                                            ? "font-medium text-green-800"
-                                            : "text-gray-400"
-                                        }`} >
+                                    {/* DESKTOP*/}
+                                    <span
+                                        className={`hidden whitespace-nowrap text-[13px] sm:block
+                                              ${isComplete || isActive
+                                                ? "font-medium text-green-800"
+                                                : "text-gray-400"
+                                            }`} >
                                         {step.title}
                                     </span>
 
+                                    {/* MOBILE*/}
+                                    {isActive && (
+                                        <span className="max-w-28 truncate text-[11px] font-medium text-green-800 sm:hidden">
+                                            {step.title}
+                                        </span>
+                                    )}
                                 </div>
 
-
-                                {/* -----------LINE -----------*/}
-
-                                {index <
-                                    orderData.steps.length - 1 && (
-                                        <div className={` mx-3 h-px w-7 sm:mx-4 sm:w-14 lg:w-18
-                                     ${isComplete
+                                {/* LINE */}
+                                {index < orderData.steps.length - 1 && (
+                                    <div
+                                        className={`
+                                mx-2 h-px w-7 shrink-0
+                                sm:mx-4 sm:w-14 lg:w-18
+                                ${isNextActive
                                                 ? "bg-[#05422C]"
                                                 : "bg-[#C3D2CC]"
-                                            }`} />)}
+                                            }
+                            `}
+                                    />
+                                )}
                             </div>
                         );
                     })}
-
                 </div>
-
             </section>
 
             {/*  CONTENT */}
@@ -444,11 +458,11 @@ export default function OrderPage() {
 
                         <div className=" flex items-center justify-between gap-5  text-sm ">
                             <span className="text-[#9D9EA2]">
-                                { orderComplete.shippingOptions ?.title}
+                                {orderComplete.shippingOptions?.title}
                             </span>
 
                             <span className="text-right text-[#17191d]">
-                                { orderComplete .shippingOptions?.value}
+                                {orderComplete.shippingOptions?.value}
                             </span>
                         </div>
 
@@ -456,11 +470,11 @@ export default function OrderPage() {
 
                         <div className=" flex items-center justify-between gap-5 text-sm">
                             <span className="text-[#9D9EA2]">
-                                { orderComplete.payment ?.title }
+                                {orderComplete.payment?.title}
                             </span>
 
                             <span className="text-right text-[#17191d]">
-                                {orderComplete.payment ?.value}
+                                {orderComplete.payment?.value}
                             </span>
                         </div>
 
@@ -475,7 +489,7 @@ export default function OrderPage() {
 
                         <div className=" flex justify-between gap-4 text-sm ">
                             <span className="text-[#9D9EA2]">
-                                { orderComplete.summary ?.subtotal }
+                                {orderComplete.summary?.subtotal}
                             </span>
 
                             <span className="font-medium">
@@ -488,7 +502,7 @@ export default function OrderPage() {
 
                         <div className="flex justify-between gap-4 text-sm">
                             <span className="text-[#9D9EA2]">
-                                { orderComplete.summary  ?.discount }
+                                {orderComplete.summary?.discount}
                             </span>
 
                             <span className="font-medium">
@@ -516,7 +530,7 @@ export default function OrderPage() {
 
                         <div className=" flex  justify-between gap-4 border-t border-[#eeeeee] pt-4 text-sm ">
                             <span className="text-[#99999d]">
-                                {  orderComplete.summary ?.point }
+                                {orderComplete.summary?.point}
                             </span>
 
                             <span className="font-medium">
@@ -528,7 +542,7 @@ export default function OrderPage() {
 
                         <div className=" flex justify-between gap-4  border-t  border-[#eeeeee]  pt-4">
                             <span className=" text-sm font-mediumtext-[#17191d] ">
-                                { orderComplete.summary ?.total}
+                                {orderComplete.summary?.total}
                             </span>
 
                             <span className="text-lg font-semibold text-[#ff3517]">
@@ -541,23 +555,20 @@ export default function OrderPage() {
                 </div>
 
 
-                   {/*  NEW ORDER */}
+                {/*  NEW ORDER */}
 
                 <div className=" flex flex-col items-center justify-center  gap-5  pt-7 text-center" >
 
                     <p className=" text-sm text-[#a0a0a4] " >
-                        { orderComplete.newOrder  ?.text }
+                        {orderComplete.newOrder?.text}
                     </p>
 
 
                     <Link
-                        to={
-                            orderComplete.newOrder
-                                ?.link || "/shop"
-                        }
-                        className=" flex h-12 min-w-35 items-center justify-center rounded-full bg-[#08b52a]
-                         px-7  text-sm  font-medium  text-white  transition hover:bg-[#06a825] active:scale-95">
-                        { orderComplete.newOrder ?.button }
+                        to="/"
+                        className="flex h-12 min-w-35 items-center justify-center rounded-full bg-[#17AF26] 
+                        px-7 text-sm font-medium text-white transition hover:bg-[#06a825] active:scale-95" >
+                        {orderComplete.newOrder?.button}
                     </Link>
 
                 </div>
