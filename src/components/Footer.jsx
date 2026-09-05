@@ -14,6 +14,15 @@ import mastercard1 from "../icons/mastercard1.png";
 import mastercard2 from "../icons/mastercard2.png";
 import mastercard3 from "../icons/mastercard3.png";
 
+
+const paymentIcons = {
+  mastercard: mastercard,
+  visa: mastercard1,
+  bitcoin: mastercard2,
+  amex: mastercard3,
+};
+
+
 export default function Footer() {
     const [email, setEmail] = useState("");
 
@@ -82,6 +91,7 @@ export default function Footer() {
                             className="mb-5 flex w-fit items-center gap-2"
                         >
                             <img
+
                                 src={logo}
                                 alt={footerData.company.name}
                                 className="h-auto w-32.5 brightness-0 invert transition-opacity hover:opacity-80"
@@ -185,22 +195,26 @@ export default function Footer() {
 
                         {/* Payment */}
                         <div className="mt-7 flex items-center gap-4">
-                            {[mastercard, mastercard1, mastercard2, mastercard3].map(
-                                (payment, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex h-8 w-12 items-center justify-center"
+                            {footerData.payments.map((payment) => (
+                                <div
+                                    key={payment.name}
+                                    className="flex h-8 w-12 items-center justify-center"
+                                >
+                                    <a
+                                        href={payment.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={payment.name}
+                                        className="flex h-full w-full items-center justify-center transition-opacity hover:opacity-80"
                                     >
-                                        <Link>
                                         <img
-                                            src={payment}
-                                            alt={`Payment method ${index + 1}`}
+                                            src={paymentIcons[payment.icon]}
+                                            alt={payment.name}
                                             className="max-h-full max-w-full object-contain"
                                         />
-                                        </Link>
-                                    </div>
-                                )
-                            )}
+                                    </a>
+                                </div>
+                            ))}
                         </div>
 
                     </div>

@@ -10,6 +10,11 @@ import Checkout from "./productPage/Checkout";
 import OrderPage from './productPage/OrderPage'
 import CategoryPage from "./layouts/CategoryPage";
 import ShopAll from "./categoryPage/ShopAll";
+import FeatuerdProductLayout from "./layouts/FeatuerdProductLayout"
+
+
+import ProductDetails from "./pages/ProductDetails";
+
 
 export default function App() {
   return (
@@ -30,8 +35,12 @@ export default function App() {
 
       <Route element={<CategoryPage/>}>
           <Route path="/shop" element={<ShopAll/>}/>
-          
       </Route>
+     
+     <Route element={<FeatuerdProductLayout/>}>
+      <Route path="/product/:id" element={<ProductDetails />}/>
+      
+     </Route>
 
     </Routes>
   );

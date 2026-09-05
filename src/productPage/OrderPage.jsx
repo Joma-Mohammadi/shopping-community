@@ -205,11 +205,8 @@ export default function OrderPage() {
 
                                 {/* LINE */}
                                 {index < orderData.steps.length - 1 && (
-                                    <div
-                                        className={`
-                                mx-2 h-px w-7 shrink-0
-                                sm:mx-4 sm:w-14 lg:w-18
-                                ${isNextActive
+                                    <div className={`mx-2 h-px w-7 shrink-0  sm:mx-4 sm:w-14 lg:w-18
+                                       ${isNextActive
                                                 ? "bg-[#05422C]"
                                                 : "bg-[#C3D2CC]"
                                             }

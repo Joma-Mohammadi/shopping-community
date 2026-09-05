@@ -1,12 +1,21 @@
 import { useState } from "react";
+import shippingIcon from "../images/Button.png";
+import safeIcon from "../images/Button (1).png";
+import qualityIcon from "../images/Button (2).png";
 
 import productsData from "../data/products.json";
 import shopFilters from "../data/shopFilters.json";
 
 import ProductGrid from "./ProductGrid";
 import ShopSidebar from "./ShopSidebar";
+import TopSellingSlider from "./TopSellingSlider";
+import CategoryProduct from "../categoryPage/CategoryProduct"
 
-import { FaChevronDown, FaTimes } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaChevronUp,
+  FaTimes,
+} from "react-icons/fa";
 
 export default function ShopAll() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -14,6 +23,8 @@ export default function ShopAll() {
   const [rating, setRating] = useState(0);
   const [sortBy, setSortBy] = useState("default");
   const [showFilters, setShowFilters] = useState(false);
+
+
 
   const products = productsData.products || [];
   const categories = shopFilters.categories || [];
@@ -111,6 +122,8 @@ export default function ShopAll() {
     );
   }
 
+  
+
   const selectedCategoryData = categories.find(
     (category) => category.id === selectedCategory
   );
@@ -119,26 +132,77 @@ export default function ShopAll() {
     selectedCategoryData?.label || "Cannabis";
 
   return (
-    <main className="min-h-screen bg-white pb-16">
-      <div className="mx-auto max-w-350 px-5 py-7 sm:px-7 lg:px-8">
+    <main className="min-h-screen bg-white pb-50">
+      {/* Features */}
+      <div className="mb-8 grid grid-cols-1 bg-[#F1F5F3] sm:grid-cols-3">
+
+        <div className="flex items-center gap-4 px-6 py-7 sm:justify-center sm:border-r sm:border-[#CBD5D1]">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white">
+            <img
+              src={shippingIcon}
+              alt="Reliable Shipping"
+              className="h-10 w-10 object-contain"
+            />
+          </div>
+
+          <h3 className="text-lg font-semibold text-[#20242d]">
+            Reliable Shipping
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-4 px-6 py-7 sm:justify-center sm:border-r sm:border-[#CBD5D1]">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white">
+            <img
+              src={safeIcon}
+              alt="You’re Safe With Us"
+              className="h-10 w-10 object-contain"
+            />
+          </div>
+
+          <h3 className="text-lg font-semibold text-[#20242d]">
+            You’re Safe With Us
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-4 px-6 py-7 sm:justify-center">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white">
+            <img
+              src={qualityIcon}
+              alt="Best Quality & Pricing"
+              className="h-10 w-10 object-contain"
+            />
+          </div>
+
+          <h3 className="text-lg font-semibold text-[#20242d]">
+            Best Quality & Pricing
+          </h3>
+        </div>
+
+      </div>
+      <div className="mx-auto max-w-400 overflow-x-hidden px-4 py-7 sm:px-7 lg:px-8">
 
         {/* Header */}
-        <div className="border-b border-[#F4F4F4] pb-5">
+        <div className="w-full max-w-260 lg:ml-74 border-b border-[#F4F4F4] pb-5">
+          <div className="flex items-center justify-between">
 
-          {/* Mobile */}
-          <div className="flex items-center justify-between lg:hidden">
             <h1 className="text-[25px] font-medium text-[#181b20]">
               Shop
             </h1>
 
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
+              {/* Filter */}
               <button
-                onClick={() => setShowFilters(true)}
-                className="rounded-full border border-[#F4F4F4] px-4 py-2.5 text-sm"
-              >
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center gap-2 rounded-full border border-[#F4F4F4] px-4 py-2.5 text-sm lg:hidden">
                 Filter
+                {showFilters ? (
+                  <FaChevronUp size={10} />
+                ) : (
+                  <FaChevronDown size={10} />
+                )}
               </button>
 
+              {/* Sort */}
               <div className="relative">
                 <select
                   value={sortBy}
@@ -157,32 +221,6 @@ export default function ShopAll() {
                   className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#999]"
                 />
               </div>
-            </div>
-          </div>
-
-          {/* Desktop */}
-          <div className="hidden items-center justify-between lg:flex">
-            <h1 className="text-[25px] font-medium text-[#181b20]">
-              Shop
-            </h1>
-
-            <div className="relative">
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="h-10 min-w-36 appearance-none rounded-full border border-[#F4F4F4] bg-white px-5 pr-9 text-xs"
-              >
-                {orderBy.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.label}
-                  </option>
-                ))}
-              </select>
-
-              <FaChevronDown
-                size={9}
-                className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#999]"
-              />
             </div>
           </div>
         </div>
@@ -210,31 +248,53 @@ export default function ShopAll() {
           {/* Content */}
           <section className="min-w-0 flex-1">
 
+            {/* Category title */}
             <div className="mb-7">
               <h2 className="text-[18px] font-medium text-[#0dae28]">
                 {categoryTitle}
               </h2>
 
               <p className="mt-3 max-w-262.5 text-sm leading-[1.55] text-[#70727a]">
-                Here at WestCoastSupply’s cannabis section,
-                we showcase the best Indica, Hybrid, and Sativa
-                medical cannabis strain selections at the best
-                prices online. You can be assured that all our
-                strains go through a strict screening process to
-                ensure that all your cannabis needs are top-quality.
+                Here at WestCoastSupply’s “ cannabis section, we showcase the best Indica, Hybrid,
+                and Sativa medical cannabis strain selections at the best prices online. You can be
+                assured that all our strains go through a strict screening process to ensure that all
+                your cannabis needs are top-quality. All of our flowers are sourced from reputable growers,
+                based in British Columbia, Canada. We have hige grade selection comes from growers that
+                produce AAAA+ quality cannabis flowers and have many years of experience in the cannabis
+                industry. You are guaranteed to
+                be receiving high-quality flowers at the best prices online with our unbeatable sales!
               </p>
             </div>
 
-            {/* Products */}
+            {/* Top Selling */}
             <div className="rounded-2xl bg-[#F2F6F4] p-5 sm:p-7">
-              <h2 className="mb-6 text-[21px] font-medium text-[#17191d]">
+              <h2 className="mb-6 text-[21px] font-mediumt text-[#17191d]">
                 Top Selling
               </h2>
 
+              <TopSellingSlider products={filteredProducts} />
+            </div>
+
+            {/* All Products */}
+            <div className="mt-10">
+              <ProductGrid products={filteredProducts} />
+            </div>
+
+            {/* Featured Product */}
+
+            <div className="mt-10">
+              <CategoryProduct products={filteredProducts} />
+            </div>
+
+            {/* after  Featured Product cards*/}
+            <div className="mt-14">
               <ProductGrid products={filteredProducts} />
             </div>
           </section>
         </div>
+
+
+
       </div>
 
       {/* Mobile Filter */}

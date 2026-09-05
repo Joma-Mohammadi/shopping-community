@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-
+import Button from "../components/Button";
 export default function ShopSidebar({
   categories = [],
   reviews = [],
@@ -18,7 +18,7 @@ export default function ShopSidebar({
   setSortBy,
 }) {
   return (
-    <aside className="w-full shrink-0 lg:w-67.5">
+    <aside className="w-full shrink-0 lg:w-67.5 ">
 
       <div className="border-r border-[#eeeeee] pr-7">
 
@@ -26,7 +26,7 @@ export default function ShopSidebar({
             FILTERS
         ========================== */}
 
-        <div className="border-b border-[#eeeeee] pb-5">
+        <div className="border-b border-[#F4F4F4] pb-5 -mt-21.5">
 
           <h2 className="text-[16px] font-medium text-[#20242d]">
             Filters
@@ -38,9 +38,9 @@ export default function ShopSidebar({
             PRODUCT CATEGORY
         ========================== */}
 
-        <div className="border-b border-[#eeeeee] py-5">
+        <div className="border-b border-[#F4F4F4] py-5">
 
-          <h3 className="mb-5 text-[10px] font-medium uppercase tracking-[1.3px] text-[#777777]">
+          <h3 className="mb-5 text-[10px] font-medium uppercase tracking-[1.3px] text-[#717378]">
             Product Category
           </h3>
 
@@ -67,11 +67,10 @@ export default function ShopSidebar({
                   {/* RADIO */}
 
                   <span
-                    className={`mr-3 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border ${
-                      active
-                        ? "border-[#12b52b] bg-[#12b52b]"
-                        : "border-[#e9e9e9] bg-white"
-                    }`}
+                    className={`mr-3 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border ${active
+                      ? "border-[#12b52b] bg-[#12b52b]"
+                      : "border-[#F4F4F4] bg-white"
+                      }`}
                   >
                     {active && (
                       <span className="h-2 w-2 rounded-full bg-white" />
@@ -81,18 +80,17 @@ export default function ShopSidebar({
                   {/* LABEL */}
 
                   <span
-                    className={`text-[13px] ${
-                      active
-                        ? "font-medium text-[#33353a]"
-                        : "text-[#46484d]"
-                    }`}
+                    className={`text-[13px] ${active
+                      ? "font-medium text-[#33353a]"
+                      : "text-[#46484d]"
+                      }`}
                   >
                     {category.label}
                   </span>
 
                   {/* DIVIDER */}
 
-                  <span className="mx-3 h-[14px] w-px bg-[#eeeeee]" />
+                  <span className="mx-3 h-3.5 w-px bg-[#eeeeee]" />
 
                   {/* COUNT */}
 
@@ -112,7 +110,7 @@ export default function ShopSidebar({
             FILTER BY PRICE
         ========================== */}
 
-        <div className="border-b border-[#eeeeee] py-5">
+        <div className=" py-5">
 
           <h3 className="mb-5 text-[10px] font-medium uppercase tracking-[1.3px] text-[#777777]">
             Filter By Price
@@ -120,76 +118,93 @@ export default function ShopSidebar({
 
           <div className="relative pt-1">
 
-            {/* PRICE LABELS */}
+            {/* FILTER BY PRICE */}
+            <div className="border-b border-[#eeeeee] py-5">
+              <h3 className="mb-3 text-[10px] font-medium uppercase tracking-[1.3px] text-[#777777]">
+                Filter By Price
+              </h3>
 
-            <div className="mb-2 flex items-center justify-between">
+              <div className="relative pt-1">
 
-              <span className="rounded-full bg-[#f5f5f5] px-2.25 py-1.25 text-[10px] font-medium text-[#222222]">
-                $0
-              </span>
+                {/* PRICE LABELS */}
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="rounded-full bg-[#f5f5f5] px-3 py-1.5 text-[12px] font-medium text-[#222222]">
+                    $0
+                  </span>
 
-              <span className="rounded-full bg-[#f5f5f5] px-2.25 py-1.25 text-[10px] font-medium text-[#222222]">
-                ${Number(price).toLocaleString()}
-              </span>
+                  <span className="rounded-full bg-[#f5f5f5] px-3 py-1.5 text-[12px] font-medium text-[#222222]">
+                    ${Number(price).toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
+                </div>
 
+                {/* RANGE */}
+                <div className="relative mt-2 h-5">
+
+                  {/* LINE */}
+                  <div className="absolute left-1 right-1 top-1/2 h-0.5 -translate-y-1/2 bg-[#eeeeee]" />
+
+                  {/* BLACK ACTIVE LINE */}
+                  <div
+                    className="absolute left-1 top-1/2 h-0.5 -translate-y-1/2 bg-[#171717]"
+                    style={{
+                      width: `calc(${(price / 50000) * 100}% - 0.25rem)`,
+                    }}
+                  />
+
+                  
+                  <span className="absolute left-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full border-2 border-[#171717] bg-white" />
+
+                  {/* MOVING CIRCLE */}
+                  <span
+                    className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#171717] bg-white"
+                    style={{
+                      left: `calc(${(price / 50000) * 100}% )`,
+                    }}
+                  />
+
+                  {/* REAL RANGE INPUT */}
+                  <input
+                    type="range"
+                    min="0"
+                    max="50000"
+                    step="100"
+                    value={price}
+                    onChange={(e) => setPrice(Number(e.target.value))}
+                    className="absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0"
+                  />
+                </div>
+              </div>
+
+              {/* APPLY */}
+              <button
+                type="button"
+                className="mt-5 rounded-full bg-[#10b52b] px-9 py-3 text-[12px] font-medium text-white transition hover:bg-[#0ca525]"
+              >
+                Apply
+              </button>
             </div>
 
-            {/* RANGE */}
-
-            <div className="relative mt-2 h-5">
-
-              <div className="absolute left-0.75 right-0.75 top-1/2 h-0.5 -translate-y-1/2 bg-[#171717]" />
-
-              <span className="absolute left-0 top-1/2 h-2.25 w-2.25 -translate-y-1/2 rounded-full border-2 border-[#171717] bg-white" />
-
-              <span className="absolute right-0 top-1/2 h-2.25 w-2.25 -translate-y-1/2 rounded-full border-2 border-[#171717] bg-white" />
-
-              <input
-                type="range"
-                min="0"
-                max="50000"
-                step="100"
-                value={price}
-                onChange={(e) =>
-                  setPrice(
-                    Number(e.target.value)
-                  )
-                }
-                className="absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0"
-              />
-
-            </div>
-
+          
           </div>
-
-          {/* APPLY */}
-
-          <button
-            type="button"
-            className="mt-5 rounded-full bg-[#10b52b] px-[29px] py-[10px] text-[12px] font-medium text-white transition hover:bg-[#0ca525]"
-          >
-            Apply
-          </button>
-
         </div>
 
         {/* =========================
             ORDER BY
         ========================== */}
 
-        <div className="border-b border-[#eeeeee] py-5">
+        <div className=" py-5">
 
           <h3 className="mb-5 text-[10px] font-medium uppercase tracking-[1.3px] text-[#777777]">
             Order By
           </h3>
 
           <div className="space-y-[11px]">
-
             {orderBy.map((option) => {
-
               const active =
                 sortBy === option.id;
-
               return (
                 <button
                   key={option.id}
@@ -203,11 +218,10 @@ export default function ShopSidebar({
                   {/* RADIO */}
 
                   <span
-                    className={`mr-3 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border ${
-                      active
-                        ? "border-[#12b52b] bg-[#12b52b]"
-                        : "border-[#e9e9e9] bg-white"
-                    }`}
+                    className={`mr-3 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full border ${active
+                      ? "border-[#12b52b] bg-[#12b52b]"
+                      : "border-[#e9e9e9] bg-white"
+                      }`}
                   >
                     {active && (
                       <span className="h-2 w-2 rounded-full bg-white" />
@@ -264,11 +278,10 @@ export default function ShopSidebar({
                   {/* CHECKBOX */}
 
                   <span
-                    className={`mr-3 flex h-4.75 w-4.75 shrink-0 items-center justify-center rounded-sm border ${
-                      active
-                        ? "border-[#10b52b] bg-[#10b52b]"
-                        : "border-[#eeeeee] bg-white"
-                    }`}
+                    className={`mr-3 flex h-4.75 w-4.75 shrink-0 items-center justify-center rounded-sm border ${active
+                      ? "border-[#10b52b] bg-[#10b52b]"
+                      : "border-[#eeeeee] bg-white"
+                      }`}
                   >
                     {active && (
                       <span className="text-[12px] leading-none text-white">
