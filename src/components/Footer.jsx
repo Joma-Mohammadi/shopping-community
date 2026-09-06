@@ -38,7 +38,7 @@ export default function Footer() {
 
       {/* Newsletter Card */}
       <div
-        className="absolute left-1/2 top-0 w-[calc(100%-32px)] max-w-400
+        className="absolute left-1/2 top-0 w-[calc(100%-32px)] max-w-350
         -translate-x-1/2 -translate-y-1/2 rounded-[15px]
         bg-[#075039] px-10 py-11 md:px-10"
       >

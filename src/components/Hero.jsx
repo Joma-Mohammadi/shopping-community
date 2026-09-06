@@ -1,81 +1,313 @@
 import Button from "../components/Button";
+
 import hero from "../data/hero.json";
+
 import image1 from "../images/1.png";
 import image2 from "../images/2.png";
 import image3 from "../images/3.png";
+
 import background from "../images/Mask group.png";
 import mobileBackground from "../images/Mask group (1).png";
 
 export default function Hero() {
-    const productImages = { 2: image1, 1: image2, 3: image3 };
+    const productImages = {
+        1: image2,
+        2: image1,
+        3: image3,
+    };
 
     return (
         <section
-            className="relative min-h-170 overflow-hidden bg-[#145b47] bg-cover bg-center sm:min-h-180 md:min-h-190 
-            lg:min-h-200 xl:min-h-212.5"
-            style={{ backgroundImage: `url(${background})` }}
-        >
-            <img src={mobileBackground} alt="" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+            className="
+                relative
+                min-h-[760px]
+                overflow-hidden
+                bg-[#145b47]
+                bg-cover
+                bg-center
 
-            <div className="mx-auto grid min-h-170 w-full max-w-400 grid-cols-1 sm:min-h-180 md:min-h-190 md:grid-cols-2
-             lg:min-h-200 xl:min-h-212.5">
-                {/* Content */}
-                <div className="relative z-20 flex flex-col justify-center px-6 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-12 xl:px-16">
-                    <span className="mb-3 text-[16px] font-bold tracking-[3px] text-yellow-400 sm:mb-4 sm:text-sm sm:tracking-[4px] md:mb-5 md:tracking-[5px]">
+                sm:min-h-[800px]
+                md:min-h-[650px]
+                lg:min-h-[700px]
+                xl:min-h-[750px]
+            "
+            style={{
+                backgroundImage: `url(${background})`,
+            }}
+        >
+            {/* Mobile Background */}
+            <img
+                src={mobileBackground}
+                alt=""
+                className="
+                    absolute
+                    inset-0
+                    h-full
+                    w-full
+                    object-cover
+                    md:hidden
+                "
+            />
+
+            {/* Main Container */}
+            <div
+                className="
+                    relative
+                    mx-auto
+                    min-h-190
+                    max-w-400
+
+                    sm:min-h-200
+                    md:min-h-162.5
+                    lg:min-h-175
+                    xl:min-h-187.5
+                "
+            >
+                {/* ================= CONTENT ================= */}
+                <div
+                    className="
+                        relative
+                        z-20
+                        px-6
+                        pt-20
+
+                        sm:px-8
+                        sm:pt-24
+
+                        md:absolute
+                        md:left-0
+                        md:top-1/2
+                        md:w-[52%]
+                        md:-translate-y-1/2
+                        md:px-10
+                        md:pt-0
+
+                        lg:px-12
+
+                        xl:px-16
+                    "
+                >
+                    <span
+                        className="
+                            mb-4
+                            block
+                            text-[15px]
+                            font-bold
+                            tracking-[3px]
+                            text-yellow-400
+
+                            sm:text-base
+                            sm:tracking-[4px]
+
+                            md:mb-5
+                            md:tracking-[5px]
+                        "
+                    >
                         {hero.eyebrow}
                     </span>
 
-                    <h1 className="text-3xl font-bold leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-5xl">
-                        {hero.title[0]} <br />
+                    <h1
+                        className="
+                            text-3xl
+                            font-bold
+                            leading-[1.12]
+                            text-white
+
+                            sm:text-4xl
+
+                            md:text-5xl
+
+                            lg:text-6xl
+                        "
+                    >
+                        {hero.title[0]}
+                        <br />
                         {hero.title[1]}
                     </h1>
 
-                    <p className="mt-4 max-w-150 text-base leading-relaxed text-white sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">
+                    <p
+                        className="
+                            mt-5
+                            max-w-[600px]
+                            text-base
+                            leading-relaxed
+                            text-white
+
+                            sm:text-lg
+
+                            md:text-xl
+
+                            lg:text-2xl
+                        "
+                    >
                         {hero.subtitle}
                     </p>
 
                     {/* Offers */}
-                    <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm font-bold text-white sm:mt-10 sm:gap-x-5 sm:text-base md:mt-14 md:gap-x-6 md:text-lg lg:mt-20 lg:text-xl">
+                    <div
+                        className="
+                            mt-8
+                            text-sm
+                            font-bold
+                            text-white
+
+                            sm:mt-10
+                            sm:text-base
+
+                            md:mt-12
+                            md:text-lg
+
+                            lg:mt-14
+                            lg:text-xl
+                        "
+                    >
                         {hero.offers.map((offer, index) => (
-                            <div key={offer.id} className="flex items-center gap-4 sm:gap-5 md:gap-6">
-                                <span>{offer.text}</span>
-                                {index !== hero.offers.length - 1 && <span className="h-5 w-px bg-white/40" />}
-                            </div>
+                            <span
+                                key={offer.id}
+                                className="inline-block"
+                            >
+                                {offer.text}
+
+                                {index !== hero.offers.length - 1 && (
+                                    <span className="mx-4 text-white/40">
+                                        |
+                                    </span>
+                                )}
+                            </span>
                         ))}
                     </div>
 
                     {/* Button */}
-                    <div className="mt-8 sm:mt-10 md:mt-12 ">
-                        <Button className="  " to={hero.button.path}>{hero.button.text}</Button>
+                    <div className="mt-8 sm:mt-10 md:mt-12">
+                        <Button to={hero.button.path}>
+                            {hero.button.text}
+                        </Button>
                     </div>
                 </div>
 
-                {/* Products */}
-                <div className="relative min-h-75 sm:min-h-90 md:min-h-0">
-                    {hero.products.map((product) => (
-                        <div
-                            key={product.id}
-                            className={`absolute ${product.position === "center"
-                                    ? "left-[48%] top-[-14%] -translate-x-1/2 sm:top-[7%] md:left-[50%] md:top-[30%] lg:top-[27%] xl:top-[20%] xl:left-[61%]"
-                                    : product.position === "left"
-                                        ? "left-[1.5%] bottom-[19%] sm:left-[5%] sm:bottom-[8%] md:left-[2%] md:bottom-[12%] lg:left-[5%] lg:bottom-[13%] xl:left-[10%]"
-                                        : "right-[8%] bottom-[29%] sm:right-[3%] sm:bottom-[10%] md:right-[0%] md:bottom-[15%] lg:right-[3%] lg:bottom-[20%] xl:right-[-11%]"
-                                }`}>
-                            <div className="flex h-40 w-36 items-end justify-center sm:h-48 sm:w-44 md:h-52 md:w-48 lg:h-60 lg:w-56 xl:h-72 xl:w-64">
-                                <img
-                                    src={productImages[product.id]}
-                                    alt={product.name}
-                                    className={
-                                        product.id === 1
-                                            ? "h-auto w-32 object-contain sm:w-36 md:w-40 lg:w-48 xl:w-56"
-                                            : product.id === 2
-                                                ? "h-auto w-24 object-contain sm:w-28 md:w-32 lg:w-36 xl:w-40"
-                                                : "h-auto w-20 object-contain sm:w-24 md:w-28 lg:w-32 xl:w-36"
-                                    }
-                                />
-                            </div>
-                        </div>
-                    ))}
+                {/* ================= PRODUCTS ================= */}
+
+                {/* Product 1 */}
+                <div
+                    className="
+                        absolute
+                        z-10
+
+                        left-[3%]
+                        bottom-[5%]
+
+                        sm:left-[8%]
+                        sm:bottom-[4%]
+
+                        md:left-[52%]
+                        md:bottom-[10%]
+
+                        lg:left-[55%]
+                        lg:bottom-[9%]
+
+                        xl:left-[54%]
+                        xl:bottom-[8%]
+                    "
+                >
+                    <img
+                        src={productImages[1]}
+                        alt={hero.products.find((p) => p.id === 1)?.name}
+                        className="
+                            h-auto
+                            w-[110px]
+                            object-contain
+
+                            sm:w-[130px]
+
+                            md:w-[150px]
+
+                            lg:w-[180px]
+
+                            xl:w-[210px]
+                        "
+                    />
+                </div>
+
+                {/* Product 2 - Center */}
+                <div
+                    className="
+                        absolute
+                        z-20
+
+                        left-1/2
+                        top-[30%]
+                        -translate-x-1/2
+
+                        sm:top-[32%]
+
+                        md:left-[72%]
+                        md:top-[13%]
+
+                        lg:left-[72%]
+                        lg:top-[10%]
+
+                        xl:left-[72%]
+                        xl:top-[7%]
+                    "
+                >
+                    <img
+                        src={productImages[2]}
+                        alt={hero.products.find((p) => p.id === 2)?.name}
+                        className="
+                            h-auto
+                            w-[100px]
+                            object-contain
+
+                            sm:w-[120px]
+
+                            md:w-[130px]
+
+                            lg:w-[155px]
+
+                            xl:w-[175px]
+                        "
+                    />
+                </div>
+
+                {/* Product 3 */}
+                <div
+                    className="
+                        absolute
+                        z-10
+
+                        right-[4%]
+                        bottom-[8%]
+
+                        sm:right-[6%]
+                        sm:bottom-[6%]
+
+                        md:right-[1%]
+                        md:bottom-[12%]
+
+                        lg:right-[2%]
+                        lg:bottom-[10%]
+
+                        xl:right-[2%]
+                        xl:bottom-[8%]
+                    "
+                >
+                    <img
+                        src={productImages[3]}
+                        alt={hero.products.find((p) => p.id === 3)?.name}
+                        className="
+                            h-auto
+                            w-[80px]
+                            object-contain
+
+                            sm:w-[100px]
+
+                            md:w-[120px]
+
+                            lg:w-[145px]
+
+                            xl:w-[165px]
+                        "
+                    />
                 </div>
             </div>
         </section>
