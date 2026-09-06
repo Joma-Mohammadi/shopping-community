@@ -5,6 +5,8 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
 import navigation from "../data/navigation.json";
 
+import logo from "../images/logo.png";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount } = useCart();
@@ -15,7 +17,7 @@ export default function Header() {
       <div className="mx-auto hidden h-17.5 w-full max-w-450 items-center px-6 lg:flex xl:px-10">
         {/* Logo */}
         <NavLink to="/" className="flex w-62.5 shrink-0 items-center">
-          <img src="../src/images/logo.png" alt="" className="w-45" />
+          <img src={logo} alt="Logo" className="w-45 h-auto" />
         </NavLink>
 
         {/* Search */}
