@@ -16,10 +16,7 @@
   "quickLinks": {
     "title": "QUICK LINK",
     "links": [
-      {
-        "title": "Track Your Order",
-        "path": "/track-order"
-      },
+      
       {
         "title": "Shop All",
         "path": "/shop"
@@ -37,69 +34,23 @@
         "path": "/category/concentrates"
       },
       {
-        "title": "Refunds",
-        "path": "/refunds"
-      }
+      "title": "Mushrooms",
+      "path": "/category/mushrooms"
+    }
     ]
   },
 
-  "quickLinksRight": [
-    {
-      "title": "Mushrooms",
-      "path": "/category/mushrooms"
-    },
-    {
-      "title": "Promotions / Bundles",
-      "path": "/promotions"
-    },
-    {
-      "title": "Support",
-      "path": "/support"
-    },
-    {
-      "title": "Reward",
-      "path": "/rewards"
-    },
-    {
-      "title": "Blog",
-      "path": "/blog"
-    },
-    {
-      "title": "Shipping FAQ",
-      "path": "/shipping-faq"
-    }
-  ],
+  
 
   "contact": {
     "title": "CONTACT US",
-    "email": "info@topshelfbc.cc"
+    "email": "jmfrotan490@gmail.com"
   },
 
   "more": {
     "title": "MORE",
     "columns": [
-      [
-        {
-          "title": "Buy weed online in Canada",
-          "path": "/buy-weed-online/canada"
-        },
-        {
-          "title": "Buy weed online in New Brunswick",
-          "path": "/buy-weed-online/new-brunswick"
-        },
-        {
-          "title": "Buy weed online in Prince Edward Island",
-          "path": "/buy-weed-online/prince-edward-island"
-        },
-        {
-          "title": "Buy weed online in Northwest Territories",
-          "path": "/buy-weed-online/northwest-territories"
-        },
-        {
-          "title": "Buy weed online in Saskatchewan",
-          "path": "/buy-weed-online/saskatchewan"
-        }
-      ],
+     
       [
         {
           "title": "Buy weed online in Manitoba",

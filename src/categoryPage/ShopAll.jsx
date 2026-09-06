@@ -1,4 +1,7 @@
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import shippingIcon from "../images/Button.png";
 import safeIcon from "../images/Button (1).png";
 import qualityIcon from "../images/Button (2).png";
@@ -9,7 +12,7 @@ import shopFilters from "../data/shopFilters.json";
 import ProductGrid from "./ProductGrid";
 import ShopSidebar from "./ShopSidebar";
 import TopSellingSlider from "./TopSellingSlider";
-import CategoryProduct from "../categoryPage/CategoryProduct"
+import CategoryProduct from "../categoryPage/CategoryProduct";
 
 import {
   FaChevronDown,
@@ -18,18 +21,57 @@ import {
 } from "react-icons/fa";
 
 export default function ShopAll() {
+  const location = useLocation();
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [price, setPrice] = useState(50000);
   const [rating, setRating] = useState(0);
-  const [sortBy, setSortBy] = useState("default");
+  const [sortBy, setSortBy] = useState("newest");
   const [showFilters, setShowFilters] = useState(false);
-
-
 
   const products = productsData.products || [];
   const categories = shopFilters.categories || [];
   const orderBy = shopFilters.orderBy || [];
   const reviews = shopFilters.reviews || [];
+
+  /*
+   * ==========================================
+   * Header URL -> Product Category
+   * ==========================================
+   *
+   * /shop                    -> All
+   * /category/flower         -> FLOWER
+   * /category/edibles        -> EDIBLES
+   * /category/concentrates   -> CONCENTRATES
+   * /category/mushrooms      -> MUSHROOMS
+   */
+  useEffect(() => {
+    const path = location.pathname.toLowerCase();
+
+    if (path === "/shop" || path === "/") {
+      setSelectedCategory("All");
+      return;
+    }
+
+    if (path.startsWith("/category/")) {
+      const slug = path.replace("/category/", "").replace("/", "");
+
+      const categoryMap = {
+        flower: "FLOWER",
+        edibles: "EDIBLES",
+        concentrates: "CONCENTRATES",
+        mushrooms: "MUSHROOMS",
+      };
+
+      setSelectedCategory(categoryMap[slug] || "All");
+    }
+  }, [location.pathname]);
+
+  /*
+   * ==========================================
+   * Helpers
+   * ==========================================
+   */
 
   const getPrice = (value) => {
     return Number(String(value).replace(/[^0-9.]/g, "")) || 0;
@@ -39,44 +81,21 @@ export default function ShopAll() {
     return Number(String(value).split("/")[0]) || 0;
   };
 
+  /*
+   * ==========================================
+   * Filter Products
+   * ==========================================
+   */
+
   let filteredProducts = [...products];
 
   // Category
   if (selectedCategory !== "All") {
-    const category = categories.find(
-      (item) => item.id === selectedCategory
+    filteredProducts = filteredProducts.filter(
+      (product) =>
+        String(product.category || "").toUpperCase() ===
+        selectedCategory.toUpperCase()
     );
-
-    if (category) {
-      const categoryName = category.label.toLowerCase();
-
-      filteredProducts = filteredProducts.filter((product) => {
-        const productCategory = product.category.toLowerCase();
-
-        if (
-          category.id === "cannabis" &&
-          productCategory === "flower"
-        ) {
-          return true;
-        }
-
-        if (
-          category.id === "extracts" &&
-          productCategory === "concentrates"
-        ) {
-          return true;
-        }
-
-        if (
-          category.id === "magic-mushrooms" &&
-          productCategory === "mushrooms"
-        ) {
-          return true;
-        }
-
-        return productCategory === categoryName;
-      });
-    }
   }
 
   // Price
@@ -91,7 +110,12 @@ export default function ShopAll() {
     );
   }
 
-  // Sort
+  /*
+   * ==========================================
+   * Sorting
+   * ==========================================
+   */
+
   if (sortBy === "low-high") {
     filteredProducts.sort(
       (a, b) => getPrice(a.price) - getPrice(b.price)
@@ -104,35 +128,45 @@ export default function ShopAll() {
     );
   }
 
-  if (sortBy === "rating") {
-    filteredProducts.sort(
-      (a, b) => getRating(b.rating) - getRating(a.rating)
-    );
-  }
-
-  if (sortBy === "reviews") {
-    filteredProducts.sort(
-      (a, b) => b.reviews - a.reviews
-    );
-  }
-
   if (sortBy === "name") {
     filteredProducts.sort((a, b) =>
-      a.title.localeCompare(b.title)
+      String(a.title || "").localeCompare(
+        String(b.title || "")
+      )
     );
   }
 
-  
+  if (sortBy === "random") {
+    filteredProducts.sort(() => Math.random() - 0.5);
+  }
 
-  const selectedCategoryData = categories.find(
-    (category) => category.id === selectedCategory
-  );
+  /*
+   * ==========================================
+   * Category Title
+   * ==========================================
+   */
+
+  const categoryTitleMap = {
+    FLOWER: "Flower",
+    EDIBLES: "Edibles",
+    CONCENTRATES: "Concentrates",
+    MUSHROOMS: "Mushrooms",
+  };
 
   const categoryTitle =
-    selectedCategoryData?.label || "Cannabis";
+    selectedCategory === "All"
+      ? "Cannabis"
+      : categoryTitleMap[selectedCategory] || "Cannabis";
+
+  /*
+   * ==========================================
+   * Render
+   * ==========================================
+   */
 
   return (
     <main className="min-h-screen bg-white pb-50">
+
       {/* Features */}
       <div className="mb-8 grid grid-cols-1 bg-[#F1F5F3] sm:grid-cols-3">
 
@@ -179,10 +213,12 @@ export default function ShopAll() {
         </div>
 
       </div>
+
       <div className="mx-auto max-w-400 overflow-x-hidden px-4 py-7 sm:px-7 lg:px-8">
 
         {/* Header */}
-        <div className="w-full max-w-260 lg:ml-74 border-b border-[#F4F4F4] pb-5">
+        <div className="w-full max-w-260 border-b border-[#F4F4F4] pb-5 lg:ml-74">
+
           <div className="flex items-center justify-between">
 
             <h1 className="text-[25px] font-medium text-[#181b20]">
@@ -190,11 +226,15 @@ export default function ShopAll() {
             </h1>
 
             <div className="flex items-center gap-2">
-              {/* Filter */}
+
+              {/* Mobile Filter */}
               <button
+                type="button"
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 rounded-full border border-[#F4F4F4] px-4 py-2.5 text-sm lg:hidden">
+                className="flex items-center gap-2 rounded-full border border-[#F4F4F4] px-4 py-2.5 text-sm lg:hidden"
+              >
                 Filter
+
                 {showFilters ? (
                   <FaChevronUp size={10} />
                 ) : (
@@ -204,13 +244,17 @@ export default function ShopAll() {
 
               {/* Sort */}
               <div className="relative">
+
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                   className="h-10 appearance-none rounded-full border border-[#F4F4F4] bg-white px-4 pr-8 text-sm"
                 >
                   {orderBy.map((item) => (
-                    <option key={item.id} value={item.id}>
+                    <option
+                      key={item.id}
+                      value={item.id}
+                    >
                       {item.label}
                     </option>
                   ))}
@@ -220,9 +264,13 @@ export default function ShopAll() {
                   size={9}
                   className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#999]"
                 />
+
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         {/* Main */}
@@ -230,6 +278,7 @@ export default function ShopAll() {
 
           {/* Sidebar */}
           <div className="hidden lg:block lg:w-64 lg:shrink-0">
+
             <ShopSidebar
               categories={categories}
               reviews={reviews}
@@ -243,57 +292,76 @@ export default function ShopAll() {
               sortBy={sortBy}
               setSortBy={setSortBy}
             />
+
           </div>
 
           {/* Content */}
           <section className="min-w-0 flex-1">
 
-            {/* Category title */}
+            {/* Category Title */}
             <div className="mb-7">
+
               <h2 className="text-[18px] font-medium text-[#0dae28]">
                 {categoryTitle}
               </h2>
 
               <p className="mt-3 max-w-262.5 text-sm leading-[1.55] text-[#70727a]">
-                Here at WestCoastSupply’s “ cannabis section, we showcase the best Indica, Hybrid,
-                and Sativa medical cannabis strain selections at the best prices online. You can be
-                assured that all our strains go through a strict screening process to ensure that all
-                your cannabis needs are top-quality. All of our flowers are sourced from reputable growers,
-                based in British Columbia, Canada. We have hige grade selection comes from growers that
-                produce AAAA+ quality cannabis flowers and have many years of experience in the cannabis
-                industry. You are guaranteed to
-                be receiving high-quality flowers at the best prices online with our unbeatable sales!
+                Here at WestCoastSupply’s “cannabis section”,
+                we showcase the best Indica, Hybrid, and Sativa
+                medical cannabis strain selections at the best
+                prices online. You can be assured that all our
+                strains go through a strict screening process to
+                ensure that all your cannabis needs are top-quality.
               </p>
+
             </div>
 
             {/* Top Selling */}
             <div className="rounded-2xl bg-[#F2F6F4] p-5 sm:p-7">
-              <h2 className="mb-6 text-[21px] font-mediumt text-[#17191d]">
+
+              <h2 className="mb-6 text-[21px] font-medium text-[#17191d]">
                 Top Selling
               </h2>
 
-              <TopSellingSlider products={filteredProducts} />
+              <TopSellingSlider
+                products={filteredProducts}
+              />
+
             </div>
 
             {/* All Products */}
             <div className="mt-10">
-              <ProductGrid products={filteredProducts} />
+              <ProductGrid
+                products={filteredProducts}
+              />
             </div>
 
             {/* Featured Product */}
-
             <div className="mt-10">
-              <CategoryProduct products={filteredProducts} />
+              <CategoryProduct
+                products={filteredProducts}
+              />
             </div>
 
-            {/* after  Featured Product cards*/}
+            {/* More Products */}
             <div className="mt-14">
-              <ProductGrid products={filteredProducts} />
+              <ProductGrid
+                products={filteredProducts}
+              />
             </div>
+
+            {/* Empty State */}
+            {filteredProducts.length === 0 && (
+              <div className="py-16 text-center">
+                <p className="text-sm text-gray-500">
+                  No products found in this category.
+                </p>
+              </div>
+            )}
+
           </section>
+
         </div>
-
-
 
       </div>
 
@@ -301,24 +369,29 @@ export default function ShopAll() {
       {showFilters && (
         <div className="fixed inset-0 z-50 lg:hidden">
 
+          {/* Overlay */}
           <div
             className="absolute inset-0 bg-black/30"
             onClick={() => setShowFilters(false)}
           />
 
+          {/* Filter Panel */}
           <div className="absolute bottom-0 left-0 right-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-white p-5">
 
             <div className="mb-5 flex items-center justify-between">
+
               <h2 className="text-xl font-medium">
                 Filter
               </h2>
 
               <button
+                type="button"
                 onClick={() => setShowFilters(false)}
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F5]"
               >
                 <FaTimes size={13} />
               </button>
+
             </div>
 
             <ShopSidebar
@@ -336,14 +409,19 @@ export default function ShopAll() {
             />
 
             <button
+              type="button"
               onClick={() => setShowFilters(false)}
               className="mt-5 w-full rounded-full bg-[#0dae28] py-3 text-white"
             >
               Apply Filter
             </button>
+
           </div>
+
         </div>
       )}
+
     </main>
   );
 }
+

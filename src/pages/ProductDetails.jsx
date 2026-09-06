@@ -6,7 +6,7 @@ import ProductPurchase from "../productPage/ProductPurchase";
 import ProductTabs from "../productPage/ProductTabs";
 
 import FeaturedProduct from "../productPage/FeaturedProduct"
-import ProductCard from "../products/ProductCard";
+
 
 export default function ProductDetails() {
   return (

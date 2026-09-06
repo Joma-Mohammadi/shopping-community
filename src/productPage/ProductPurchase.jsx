@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
 export default function ProductPurchase({ product }) {
+ const { addToCart } = useCart();
+
   const [weight, setWeight] = useState(product.weights[0]);
   const [pack, setPack] = useState(product.integraPack[0].title);
   const [quantity, setQuantity] = useState(2);
@@ -12,6 +15,8 @@ export default function ProductPurchase({ product }) {
   };
 
   return (
+
+
     <div>
 
       <div className="flex flex-col gap-6 border-b border-gray-100 pb-5 sm:flex-row sm:justify-between">
@@ -118,8 +123,9 @@ export default function ProductPurchase({ product }) {
           </div>
 
           <button
+          onClick={() => addToCart(product)}
             type="button"
-            className="rounded-full bg-green-600 px-7 py-4 text-sm font-semibold text-white hover:bg-green-700"
+            className="rounded-full bg-green-600 px-8  py-4 text-sm font-semibold text-white hover:bg-green-700 sm:px-11"
           >
             Add to Cart
             <span className="mx-4">|</span>

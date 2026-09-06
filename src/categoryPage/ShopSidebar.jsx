@@ -26,7 +26,7 @@ export default function ShopSidebar({
             FILTERS
         ========================== */}
 
-        <div className="border-b border-[#F4F4F4] pb-5 -mt-21.5">
+        <div className="border-b border-[#F4F4F4] pb-5 -mt-19">
 
           <h2 className="text-[16px] font-medium text-[#20242d]">
             Filters

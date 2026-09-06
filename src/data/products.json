@@ -235,6 +235,21 @@
       "badge": "",
       "stock": true,
       "sizes": ["28g", "1/2lb", "1/4lb"]
+    },
+    {
+      "id": 14,
+      "category": "MUSHROOMS",
+      "title": "2 Oz Deal Ahi Tuna + Master Tuna",
+      "image": "product4.png",
+      "rating": "4.6/5",
+      "reviews": 135,
+      "strain": "Sativa 100%",
+      "price": "$120.00",
+      "priceUnit": "",
+      "oldPrice": "$200.00",
+      "badge": "$60 ounce",
+      "stock": true,
+      "sizes": ["28g", "1/2lb", "1/4lb"]
     }
 
   ]

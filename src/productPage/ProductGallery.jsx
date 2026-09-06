@@ -4,6 +4,8 @@ import product2 from "../images/product2.png";
 import product3 from "../images/product3.png";
 import product4 from "../images/product4.png";
 
+import { RxOpenInNewWindow } from "react-icons/rx";
+
 const images = {
   "product1.png": product1,
   "product2.png": product2,
@@ -30,7 +32,7 @@ export default function ProductGallery({ product }) {
             className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full
              bg-white text-green-700 shadow cursor-pointer"
           >
-            ↗
+            <RxOpenInNewWindow />
           </button>
         </div>
 
