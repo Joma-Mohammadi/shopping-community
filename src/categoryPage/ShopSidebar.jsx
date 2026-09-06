@@ -22,17 +22,9 @@ export default function ShopSidebar({
 
       <div className="border-r border-[#eeeeee] pr-7">
 
-        {/* =========================
-            FILTERS
-        ========================== */}
+       
 
-        <div className="border-b border-[#F4F4F4] pb-5 -mt-19">
-
-          <h2 className="text-[16px] font-medium text-[#20242d]">
-            Filters
-          </h2>
-
-        </div>
+       
 
         {/* =========================
             PRODUCT CATEGORY
