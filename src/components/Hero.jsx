@@ -56,10 +56,10 @@ export default function Hero() {
                         <div
                             key={product.id}
                             className={`absolute ${product.position === "center"
-                                    ? "left-[48%] top-[-14%] -translate-x-1/2 sm:top-[7%] md:left-[50%] md:top-[30%] lg:top-[27%] xl:top-[20%] xl:left-[53%] "
+                                    ? "left-[48%] top-[-14%] -translate-x-1/2 sm:top-[7%] md:left-[50%] md:top-[30%] lg:top-[27%] xl:top-[20%] xl:left-[54%] "
                                     : product.position === "left"
                                         ? "left-[1.5%] bottom-[19%] sm:left-[5%] sm:bottom-[8%] md:left-[2%] md:bottom-[12%] lg:left-[5%] lg:bottom-[18%] xl:left-[6%] "
-                                        : "right-[8%] bottom-[29%] sm:right-[3%] sm:bottom-[10%] md:right-[0%] md:bottom-[15%] lg:right-[3%] lg:bottom-[25%] xl:right-[2%] "
+                                        : "right-[8%] bottom-[29%] sm:right-[3%] sm:bottom-[10%] md:right-[0%] md:bottom-[15%] lg:right-[3%] lg:bottom-[25%] xl:right-[0%] "
                                 }`}>
                             <div className="flex h-40 w-36 items-end justify-center sm:h-48 sm:w-44 md:h-52 md:w-48 lg:h-60 lg:w-56 xl:h-72 xl:w-64">
                                 <img
