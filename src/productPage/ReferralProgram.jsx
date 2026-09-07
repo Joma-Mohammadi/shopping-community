@@ -142,7 +142,7 @@ export default function ReferralProgram() {
                                     value={friend.email}
                                     onChange={(e) => updateFriend(index, "email", e.target.value)}
                                     placeholder="Enter your email"
-                                    className={`h-16 w-full rounded-xl border px-5 text-sm outline-none
+                                    className={`h-13 w-full rounded-xl border px-5 text-sm outline-none
                                          placeholder:text-gray-300 focus:border-green-600 ${errors[index]?.email ? "border-red-400" : "border-gray-100"}`}
                                 />
 
@@ -157,7 +157,7 @@ export default function ReferralProgram() {
                                     value={friend.name}
                                     onChange={(e) => updateFriend(index, "name", e.target.value)}
                                     placeholder="Enter your name"
-                                    className={`h-16 w-full rounded-xl border px-5 text-sm outline-none
+                                    className={`h-13 w-full rounded-xl border px-5 text-sm outline-none
                                          placeholder:text-gray-300 focus:border-green-600 ${errors[index]?.name ? "border-red-400" : "border-gray-100"}`}
                                 />
 
@@ -170,7 +170,7 @@ export default function ReferralProgram() {
                                 <button
                                     type="button"
                                     onClick={addFriend}
-                                    className="flex h-16 w-16 items-center justify-center rounded-full 
+                                    className="flex h-13 w-16 items-center justify-center rounded-full 
                                     bg-[#f0fbf4] text-2xl text-green-600 transition hover:bg-[#e2f7e9] sm:mt-0"
                                 >
                                     <FiPlus />
@@ -184,14 +184,14 @@ export default function ReferralProgram() {
                     <input
                         type="email"
                         defaultValue="johndoe@example.com"
-                        className="h-16 w-full rounded-xl border border-gray-100 px-5 text-sm
+                        className="h-13 w-full rounded-xl border border-gray-100 px-5 text-sm
                          text-gray-900 outline-none focus:border-green-600"
                     />
 
                     <input
                         type="text"
                         defaultValue="John Doe"
-                        className="h-16 w-full rounded-xl border border-gray-100 px-5 text-sm
+                        className="h-13 w-full rounded-xl border border-gray-100 px-5 text-sm
                          text-gray-900 outline-none focus:border-green-600"
                     />
 

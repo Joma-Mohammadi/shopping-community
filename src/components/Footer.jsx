@@ -54,22 +54,51 @@ export default function Footer() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-5 flex flex-col gap-4 sm:flex-row"
+          className="mt-5 flex items-center gap-2 sm:gap-3 md:gap-4"
         >
           <input
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder={footerData.newsletter.placeholder}
-            className="h-11.5 min-w-0 flex-1 rounded-full border
-            border-white/20 bg-transparent px-7 text-[11px]
-            text-white outline-none placeholder:text-white/35
-            focus:border-white/40"
+            className="
+      h-14.5
+      min-w-0
+      flex-1
+      rounded-full
+      border
+      border-white/20
+      bg-transparent
+      px-5
+      text-[11px]
+      text-white
+      outline-none
+      placeholder:text-white/35
+      focus:border-white/40
+
+      sm:px-6
+      md:px-7
+    "
           />
 
-          <Button type="submit">
+          <button
+            type="submit"
+            className="
+      h-14.5
+      shrink-0
+      rounded-full
+      bg-[#17AF26]
+      px-5
+      text-sm
+      font-medium
+      text-white
+
+      sm:px-6
+      md:px-8
+    "
+          >
             {footerData.newsletter.button}
-          </Button>
+          </button>
         </form>
       </div>
 
