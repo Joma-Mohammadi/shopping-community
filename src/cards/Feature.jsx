@@ -6,9 +6,35 @@ export default function Features() {
     <section className="bg-[#f3f7f5]">
       <div
         className="
-          mx-auto grid w-full max-w-450 grid-cols-1 gap-10
-          px-5 py-18 sm:gap-12 sm:px-7 sm:py-16
-          md:grid-cols-2 md:gap-x-8 md:gap-y-14 md:px-10 md:py-16 lg:grid-cols-3 lg:gap-10 lg:px-10 lg:py-18">
+          mx-auto
+          grid
+          w-full
+          max-w-350
+          grid-cols-1
+          gap-8
+          px-5
+          py-12
+
+          sm:gap-9
+          sm:px-7
+          sm:py-14
+
+          md:grid-cols-2
+          md:gap-x-8
+          md:gap-y-10
+          md:px-10
+          md:py-14
+
+          lg:grid-cols-3
+          lg:gap-x-8
+          lg:gap-y-10
+          lg:px-10
+          lg:py-16
+
+          xl:max-w-400
+          xl:gap-x-10
+        "
+      >
         {features.map((feature) => (
           <FeatureCard
             key={feature.id}
