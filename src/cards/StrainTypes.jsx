@@ -4,7 +4,7 @@ import StrainCard from "./StrainCard";
 export default function StrainTypes() {
   return (
     <section className="mx-auto w-full px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
-      <h2 className="text-4xl font-bold tracking-tight text-[#20242d] sm:text-5xl lg:text-5xl">
+      <h2 className="text-2xl font-bold tracking-tight text-[#20242d] sm:text-5xl lg:text-5xl">
         {data.title}
       </h2>
 

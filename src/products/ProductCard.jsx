@@ -26,11 +26,36 @@ export default function ProductCard({ product }) {
   const image = productImages[product.image];
 
   return (
-    <section className="group min-w-0">
+    <section className="group flex h-full min-w-0 flex-col">
       {/* IMAGE */}
-      <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-xl bg-[#F4F4F4]">
+      <div
+        className="
+          relative flex
+          h-45
+          w-full
+          shrink-0
+          items-center
+          justify-center
+          overflow-hidden
+          rounded-xl
+          bg-[#F4F4F4]
+          sm:h-60
+          md:h-70
+          lg:h-75
+          xl:h-80
+        "
+      >
         {product.badge && (
-          <span className="absolute left-0 top-0 z-10 rounded-br-lg bg-[#f9bd16] px-3 py-2 text-xs text-white">
+          <span
+            className="
+              absolute left-0 top-0 z-10
+              rounded-br-lg
+              bg-[#f9bd16]
+              px-2 py-1.5
+              text-[9px] text-white
+              sm:px-3 sm:py-2 sm:text-xs
+            "
+          >
             {product.badge}
           </span>
         )}
@@ -43,14 +68,31 @@ export default function ProductCard({ product }) {
             <img
               src={image}
               alt={product.title}
-              className="h-full w-auto object-contain transition duration-300 group-hover:scale-105"
+              className="
+                h-full
+                max-w-full
+                object-contain
+                transition
+                duration-300
+                group-hover:scale-105
+              "
             />
           </Link>
         )}
 
         {!product.stock && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="rounded-full bg-black/40 px-6 py-3 text-xs text-white backdrop-blur">
+            <span
+              className="
+                rounded-full
+                bg-black/40
+                px-3 py-2
+                text-[9px]
+                text-white
+                backdrop-blur
+                sm:px-6 sm:py-3 sm:text-xs
+              "
+            >
               Out Of Stock
             </span>
           </div>
@@ -58,13 +100,37 @@ export default function ProductCard({ product }) {
       </div>
 
       {/* INFO */}
-      <div className="pt-4 text-center">
-        <p className="text-xs text-gray-400">
+      <div
+        className="
+          flex
+          flex-1
+          flex-col
+          pt-3
+          text-center
+          sm:pt-4
+        "
+      >
+        {/* CATEGORY */}
+        <p className="truncate text-[10px] text-gray-400 sm:text-xs">
           {product.category}
         </p>
 
         {/* TITLE */}
-        <h3 className="mt-2 min-h-12 text-sm font-medium leading-5 text-[#20242d]">
+        <h3
+          className="
+            mt-1
+            line-clamp-2
+            min-h-8.5
+            text-[11px]
+            font-medium
+            leading-4
+            text-[#20242d]
+            sm:mt-2
+            sm:min-h-10
+            sm:text-sm
+            sm:leading-5
+          "
+        >
           <Link
             to={`/product/${product.id}`}
             className="transition hover:text-[#075039]"
@@ -74,11 +140,11 @@ export default function ProductCard({ product }) {
         </h3>
 
         {/* RATING */}
-        <div className="mt-3 text-xs">
+        <div className="mt-2 whitespace-nowrap text-[9px] sm:mt-3 sm:text-xs">
           <span className="text-[#f4b400]">★</span>{" "}
           {product.rating}
 
-          <span className="mx-2 text-gray-300">|</span>
+          <span className="mx-1 text-gray-300 sm:mx-2">|</span>
 
           {product.reviews}{" "}
           <span className="text-gray-400">
@@ -87,36 +153,79 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* STRAIN */}
-        <span className="mt-3 inline-block rounded bg-[#edf4f0] px-3 py-1 text-xs text-[#075039]">
-          {product.strain}
-        </span>
+        <div className="mt-2 flex h-6 items-center justify-center sm:mt-3 sm:h-7">
+          {product.strain && (
+            <span
+              className="
+                max-w-full
+                truncate
+                rounded
+                bg-[#edf4f0]
+                px-2
+                py-1
+                text-[9px]
+                text-[#075039]
+                sm:px-3
+                sm:text-xs
+              "
+            >
+              {product.strain}
+            </span>
+          )}
+        </div>
 
         {/* PRICE */}
-        <div className="mt-4">
+        <div className="mt-2 min-h-5 sm:mt-4">
           {product.oldPrice && (
-            <span className="mr-2 text-xs text-gray-400 line-through">
+            <span className="mr-1 text-[9px] text-gray-400 line-through sm:mr-2 sm:text-xs">
               {product.oldPrice}
             </span>
           )}
 
-          <span className="text-sm font-medium text-red-500">
+          <span className="text-[11px] font-medium text-red-500 sm:text-sm">
             {product.price}
           </span>
 
           {product.priceUnit && (
-            <span className="ml-1 text-xs text-gray-400">
+            <span className="ml-1 text-[9px] text-gray-400 sm:text-xs">
               {product.priceUnit}
             </span>
           )}
         </div>
 
         {/* SIZES */}
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        <div
+          className="
+            mt-2
+            flex
+            min-h-7
+            flex-wrap
+            items-center
+            justify-center
+            gap-1
+            sm:mt-4
+            sm:gap-2
+          "
+        >
           {product.sizes?.map((size) => (
             <button
               key={size}
               type="button"
-              className="rounded border border-gray-100 px-2 py-1 text-[10px]"
+              className="
+                rounded
+                border
+                border-gray-200
+                px-1.5
+                py-0.5
+                text-[8px]
+                leading-3
+                transition
+                hover:border-[#075039]
+                hover:text-[#075039]
+                sm:px-2
+                sm:py-1
+                sm:text-[10px]
+              "
             >
               {size}
             </button>
@@ -124,13 +233,26 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* ADD TO CART */}
-        <Button
-          type="button"
-          onClick={() => addToCart(product)}
-          className="mx-auto mt-4 h-10 w-28"
-        >
-          Add to Cart
-        </Button>
+        <div className="mt-auto pt-3 sm:pt-4">
+          <Button
+            type="button"
+            onClick={() => addToCart(product)}
+            className="
+              mx-auto
+              h-8
+              w-full
+              max-w-26.25
+              rounded-full
+              px-2
+              text-[9px]
+              sm:h-10
+              sm:max-w-31.25
+              sm:text-xs
+            "
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
     </section>
   );

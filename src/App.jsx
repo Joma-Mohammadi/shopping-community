@@ -34,46 +34,18 @@ export default function App() {
         <Route path="/order-complete" element={<OrderPage />} />
       </Route>
 
-
-     
       <Route element={<CategoryPage />}>
-
-        
-        <Route path="/shop" element={<ShopAll />}/>
-
-       
-        <Route
-          path="/category/flower"
-          element={<ShopAll />}
-        />
-
-        <Route
-          path="/category/edibles"
-          element={<ShopAll />}
-        />
-
-        <Route
-          path="/category/concentrates"
-          element={<ShopAll />}
-        />
-
-        <Route
-          path="/category/mushrooms"
-          element={<ShopAll />}
-        />
-
+        <Route path="/shop" element={<ShopAll />} />
+        <Route path="/category/flower" element={<ShopAll />} />
+        <Route path="/category/edibles" element={<ShopAll />} />
+        <Route path="/category/concentrates" element={<ShopAll />} />
+        <Route path="/category/mushrooms" element={<ShopAll />} />
       </Route>
-  
+
       <Route element={<FeatuerdProductLayout />}>
-        <Route
-          path="/product/:id"
-          element={<ProductDetails />}
-        />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Route>
-      <Route
-        path="*"
-        element={<NotFound />}
-      />
+      <Route path="*" element={<NotFound />} />
 
     </Routes>
   );
