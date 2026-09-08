@@ -25,7 +25,7 @@ export default function Hero() {
                         {hero.eyebrow}
                     </span>
 
-                    <h1 className="text-3xl font-bold leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-5xl">
+                    <h1 className="text-2xl font-bold leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-5xl">
                         {hero.title[0]} <br />
                         {hero.title[1]}
                     </h1>

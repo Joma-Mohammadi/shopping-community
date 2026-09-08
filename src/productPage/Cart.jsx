@@ -82,7 +82,7 @@ export default function Cart() {
 
       {/* Steps */}
       <div className=" bg-gray-100">
-        <div className="mx-auto flex h-20 max-w-400 items-center justify-center gap-4 ">
+        <div className="mx-auto flex h-16 w-full max-w-225 items-center justify-center gap-2 px-3 sm:h-20 sm:gap-4">
 
           <div className="flex items-center gap-2 ">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#075039] text-white">
@@ -94,7 +94,7 @@ export default function Cart() {
             </span>
           </div>
 
-          <div className="h-px w-12 bg-gray-300 sm:w-16" />
+          <div className="h-px w-6 bg-gray-300 sm:w-12 md:w-16" />
 
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#075039]">
@@ -106,7 +106,7 @@ export default function Cart() {
             </span>
           </div>
 
-          <div className="h-px w-12 bg-gray-300 sm:w-16" />
+          <div className="h-px w-6 bg-gray-300 sm:w-12 md:w-16" />
 
           <div className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#075039]">
@@ -122,9 +122,9 @@ export default function Cart() {
       </div>
 
       {/* Cart */}
-      <section className="mx-auto max-w-310 px-5 py-10 ">
+      <section className="mx-auto w-full max-w-310 px-4 py-6 sm:px-6 sm:py-10">
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_450px]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-10">
 
           {/* Products */}
           <div>
@@ -145,7 +145,7 @@ export default function Cart() {
               return (
                 <div
                   key={item.id}
-                  className="flex items-center gap-4 border-b border-gray-200 py-5"
+                  className="grid grid-cols-[56px_minmax(0,1fr)_auto_auto] items-center gap-2 border-b border-gray-200 py-4 sm:flex sm:items-center sm:gap-4 sm:py-5"
                 >
 
                   <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg border">
@@ -156,47 +156,47 @@ export default function Cart() {
                     />
                   </div>
 
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm text-gray-400">
+                  <div className="min-w-0 flex-1 overflow-hidden">
+                    <p className="truncate text-xs text-gray-400 sm:text-sm">
                       {item.quantity}x {item.title}
                     </p>
 
                     {item.strain && (
-                      <p className="mt-1 text-sm text-gray-400">
+                      <p className="mt-1 truncate text-xs text-gray-400 sm:text-sm">
                         {item.strain}
                       </p>
                     )}
                   </div>
 
-                  <div className="flex items-center gap-1">
+                  <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
 
                     <button
                       onClick={() => decreaseQuantity(item.id)}
-                      className="h-8 w-8 rounded-md hover:bg-gray-100"
+                      className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-gray-100 sm:h-8 sm:w-8"
                     >
                       <FaMinus size={10} className="mx-auto" />
                     </button>
 
-                    <span className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 text-sm">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 text-xs sm:h-10 sm:w-10 sm:text-sm">
                       {item.quantity}
                     </span>
 
                     <button
                       onClick={() => increaseQuantity(item.id)}
-                      className="h-8 w-8 rounded-md hover:bg-gray-100"
+                      className="flex h-7 w-7 items-center justify-center rounded-md hover:bg-gray-100 sm:h-8 sm:w-8"
                     >
                       <FaPlus size={10} className="mx-auto" />
                     </button>
 
                   </div>
 
-                  <span className="hidden w-20 text-right text-sm font-medium sm:block">
+                  <span className="w-auto shrink-0 text-right text-xs font-medium sm:w-20 sm:text-sm">
                     ${price.toFixed(2)}
                   </span>
 
                   <button
                     onClick={() => removeFromCart(item.id)}
-                    className="text-gray-300 hover:text-red-500"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center text-gray-300 transition hover:text-red-500"
                   >
                     <FaTrash size={12} />
                   </button>
@@ -216,7 +216,7 @@ export default function Cart() {
             </div>
 
             {/* Delivery */}
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3 lg:gap-5">
 
               {cartData.delivery.map((item, index) => (
                 <div key={index}>
@@ -227,7 +227,7 @@ export default function Cart() {
                     </h3>
                   )}
 
-                  <div className="min-h-62.5 rounded-xl border p-5 ">
+                  <div className="min-h-0 rounded-xl border p-4 sm:min-h-62.5 sm:p-5">
 
                     <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#f1f7f4] text-[#075039]">
                       {item.icon === "truck" && <FaTruck />}
@@ -253,7 +253,7 @@ export default function Cart() {
           </div>
 
           {/* Summary */}
-          <aside className="h-fit rounded-2xl border p-6">
+          <aside className="h-fit w-full rounded-2xl border p-4 sm:p-6 lg:sticky lg:top-6">
 
             <div className="flex justify-between">
               <span className="text-sm text-gray-400">
@@ -286,7 +286,7 @@ export default function Cart() {
             </div>
 
             {/* Coupon */}
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-3">
 
               <input
                 type="text"
@@ -294,7 +294,7 @@ export default function Cart() {
                 className="h-12 min-w-0 flex-1 rounded-xl border  border-gray-200 px-4 outline-none "
               />
                
-              <button className="rounded-full bg-[#f1faf3] px-5 text-sm text-green-600">
+              <button className="h-12 shrink-0 rounded-full bg-[#f1faf3] px-5 text-sm text-green-600">
                 {cartData.coupon.button}
               </button>
   
@@ -363,7 +363,7 @@ export default function Cart() {
                 {cartData.payment.title}
               </p>
 
-              <div className="mt-4 flex items-center gap-6">
+              <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-6">
 
                 {/* Mastercard */}
                 <Link
@@ -371,29 +371,29 @@ export default function Cart() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="flex gap-4 items-center">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                     <img
                       src={mastercard}
                       alt="Mastercard"
-                      className="h-6 w-10 "
+                      className="h-6 w-10 max-w-full object-contain"
                     />
 
                     <img
                       src={mastercard1}
                       alt=""
-                      className="h-6 w-10 "
+                      className="h-6 w-10 max-w-full object-contain"
                     />
 
                     <img
                       src={mastercard2}
                       alt=""
-                      className=" h-6 w-10 "
+                      className="h-6 w-10 max-w-full object-contain"
                     />
 
                     <img
                       src={mastercard3}
                       alt=""
-                      className="h-6 w-10"
+                      className="h-6 w-10 max-w-full object-contain"
                     />
                   </div>
                 </Link>

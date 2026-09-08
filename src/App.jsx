@@ -22,42 +22,26 @@ import ProductDetails from "./pages/ProductDetails";
 export default function App() {
   return (
     <Routes>
-
-      {/* =========================
-          Main Pages
-      ========================= */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
         <Route path="/hero" element={<Hero />} />
       </Route>
 
-
-      {/* =========================
-          Cart / Checkout
-      ========================= */}
       <Route element={<CartLayout />}>
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route
-          path="/order-complete"
-          element={<OrderPage />}
-        />
+        <Route path="/order-complete" element={<OrderPage />} />
       </Route>
 
 
-      {/* =========================
-          Shop + Categories
-      ========================= */}
+     
       <Route element={<CategoryPage />}>
 
-        {/* Shop All */}
-        <Route
-          path="/shop"
-          element={<ShopAll />}
-        />
+        
+        <Route path="/shop" element={<ShopAll />}/>
 
-        {/* Categories */}
+       
         <Route
           path="/category/flower"
           element={<ShopAll />}
@@ -79,22 +63,13 @@ export default function App() {
         />
 
       </Route>
-
-
-      {/* =========================
-          Product Details
-      ========================= */}
+  
       <Route element={<FeatuerdProductLayout />}>
         <Route
           path="/product/:id"
           element={<ProductDetails />}
         />
       </Route>
-
-
-      {/* =========================
-          Not Found
-      ========================= */}
       <Route
         path="*"
         element={<NotFound />}
