@@ -47,34 +47,7 @@
     "email": "jmfrotan490@gmail.com"
   },
 
-  "more": {
-    "title": "MORE",
-    "columns": [
-     
-      [
-        {
-          "title": "Buy weed online in Manitoba",
-          "path": "/buy-weed-online/manitoba"
-        },
-        {
-          "title": "Buy weed online in Quitebec",
-          "path": "/buy-weed-online/quebec"
-        },
-        {
-          "title": "Buy weed online in British Columbia",
-          "path": "/buy-weed-online/british-columbia"
-        },
-        {
-          "title": "Buy weed online in Ontario",
-          "path": "/buy-weed-online/ontario"
-        },
-        {
-          "title": "Buy weed online in Alberta",
-          "path": "/buy-weed-online/alberta"
-        }
-      ]
-    ]
-  },
+  
 
   "payments": [
   {
