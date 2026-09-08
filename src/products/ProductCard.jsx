@@ -237,19 +237,8 @@ export default function ProductCard({ product }) {
           <Button
             type="button"
             onClick={() => addToCart(product)}
-            className="
-              mx-auto
-              h-8
-              w-full
-              max-w-26.25
-              rounded-full
-              px-2
-              text-[9px]
-              sm:h-10
-              sm:max-w-31.25
-              sm:text-xs
-            "
-          >
+            className="mx-auto h-8 w-full max-w-26.25 rounded-full px-2 text-[9px]
+                       sm:h-10 sm:max-w-31.25 sm:text-xs lg:h-12 lg:max-w-40:px-4 lg:text-sm">
             Add to Cart
           </Button>
         </div>
